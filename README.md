@@ -1,10 +1,16 @@
 # restaurant.io
 The repository contain the final project for BCA-III year.
 
+## Authors
+
+- [@ShreyashPatil](https://www.github.com/shreyashpatil2002)
+-
+[@UmairBorkar](https://www.github.com/uborkar)
+
+
 ## here is the link on menu page
 ```
 Hey this is the first page for the restaurant website
 
 ```
-[Food Menu]
-(https://shreyashpatil2002.github.io/restaurant.io/customer/menus/)
+[FoodMenu](https://shreyashpatil2002.github.io/restaurant.io/customer/menus/)
