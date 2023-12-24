@@ -8,7 +8,7 @@ The repository contain the final project for BCA-III year 🙂.
 
 
 ## here is the link on menu page
-```
+```bash
 Hey this is the first page for the restaurant
 website
 
