@@ -1,16 +1,16 @@
 # restaurant.io
-The repository contain the final project for BCA-III year 🙂.
+The project will get the restaurents to get <b><i> online </i></b>.
 
 ## Authors
 
-- [@ShreyashPatil 🙋](https://www.github.com/shreyashpatil2002)
+- [@ShreyashPatil](https://www.github.com/shreyashpatil2002)
 - [@UmairBorkar](https://github.com/uborkar)
 
 
-## here is the link on menu page
-```bash
+## Here is the link on menu page
+
+```
 Hey this is the first page for the restaurant
 website
-
 ```
 [FoodMenu](https://shreyashpatil2002.github.io/restaurant.io/customer/menus/)
