@@ -121,42 +121,42 @@ const restaurentFoodItems = [
             Name: "Charge",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, repudiandae!",
             price: "price : 20",
-            imageSrc: "images/soft drink charge.jpg"
+            imageSrc: "images/soft drink charge.png"
         },
         {
             id: "ItemId16",
             Name: "Mountain Dew",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, repudiandae!",
             price: "price : 20",
-            imageSrc: "images/soft drink dew.jpeg"
+            imageSrc: "images/soft drink dew.png"
         },
         {
             id: "ItemId17",
             Name: "Fanta",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, repudiandae!",
             price: "price : 20",
-            imageSrc: "images/soft drink fanta.jpg"
+            imageSrc: "images/soft drink fanta.png"
         },
         {
             id: "ItemId18",
             Name: "Sprite",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, repudiandae!",
             price: "price : 20",
-            imageSrc: "images/soft drink sprite.jpeg"
+            imageSrc: "images/soft drink sprite.png"
         },
         {
             id: "ItemId19",
             Name: "Thums Up",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, repudiandae!",
             price: "price : 20",
-            imageSrc: "images/soft drink thumsup.jpeg"
+            imageSrc: "images/soft drink thumsup.png"
         },
         {
             id: "ItemId20",
             Name: "Pepsi",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, repudiandae!",
             price: "price : 20",
-            imageSrc: "images/soft drink pepsi.jpg"
+            imageSrc: "images/soft drink pepsi.png"
         }
     ]
 ]
