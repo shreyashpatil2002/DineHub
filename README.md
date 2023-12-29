@@ -1,7 +1,7 @@
 # restaurant.io
 The project will help restaurents to get <b><i> online </i></b>.
 
-## Authors
+## Developers / Authors
 
 - [@ShreyashPatil](https://www.github.com/shreyashpatil2002)
 - [@UmairBorkar](https://github.com/uborkar)
