@@ -1,5 +1,5 @@
 # restaurant.io
-The project will get the restaurents to get <b><i> online </i></b>.
+The project will help restaurents to get <b><i> online </i></b>.
 
 ## Authors
 
