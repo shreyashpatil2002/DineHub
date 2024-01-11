@@ -28,29 +28,30 @@
     padding: 5px 12px;
     position: absolute;
     top: 23%;
-    left: -15%;
-    transform: translate(-77%, -85%);
-    border-radius: 0 10px 10px 0;
+    right: 12%;
+    transform: translate(-77%, -65%);
+    border-radius: 15px;
     color: #fff;
+    z-index: -1;
 }
 .errMsg {
     animation: error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20);
 }
 @keyframes error {
     0% {
-        left: -15%;
+        right: -12%;
         opacity: 0;
     }
     15% {
-        left: 15%;
+        right: 35%;
         opacity: 1;
     }
     85% {
-        left: 15%;
+        right: 35%;
         opacity: 1;
     }
     100% {
-        left: -15%;
+        right: 100%;
         opacity: 0;
     }
 }
@@ -69,6 +70,16 @@
     font-size: 13px;
     padding: 8px 20px;
     border: 1px solid #d1d1d1;
+}
+.form form div {
+    position: relative;
+}
+.form form div>img {
+    position: absolute;
+    top: 55%;
+    right: 20px;
+    transform: translateY(-45%);
+    display: none;
 }
 .form form input#checkbox {
     width: auto;
