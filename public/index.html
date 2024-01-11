@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Basics</title>
+    <script type="module">
+      // first Initialize the app
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyD9ZAKxJ701Siixxpeu_qMyaeOCEwlANlk",
+        authDomain: "resto-53821.firebaseapp.com",
+        projectId: "resto-53821",
+        storageBucket: "resto-53821.appspot.com",
+        messagingSenderId: "326918236717",
+        appId: "1:326918236717:web:915e33ed359e463465e6a4",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        setDoc,
+        doc
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+      const database = getFirestore(app);
+
+      let btn = document.getElementById("submitBtn");
+      btn.addEventListener("click", () => {
+        let restName = document.querySelectorAll('input')[0].value;
+        let NoOfTables = document.querySelectorAll('input')[1].value;
+        console.log(restName);
+        let collectionRef = doc(database, 'restaurant', restName)
+        setDoc(collectionRef, {
+          RestName: restName,
+          Tables: NoOfTables
+        })
+        .then((responce) => {
+          console.log(responce);
+          let docRef = doc(database, 'restaurant', restName, 'foodItems', 'Vadapav')
+          setDoc(docRef, {
+            
+          })
+        })                       
+        .catch((err) => {                            
+          console.log(err);                          
+        }) 
+
+
+
+
+        // let userEmail = document.querySelectorAll("input")[0].value;
+        // let userPass = document.querySelectorAll("input")[1].value;
+        // let docref = doc(database, 'Restaurant', `${userEmail}`)
+        // setDoc(docref , { 
+        //   email: userEmail,
+        //   password: userPass
+        // })               
+        // .then((responce) => {
+        //   console.log(responce);
+        //   createLogic(userEmail);
+        // })                       
+        // .catch((err) => {                            
+        //   console.log(err);                          
+        // })                                                    
+      });
+    </script>
+  </head>
+
+  <body>
+    <form action="#">
+      <h1>Login form</h1>
+      <input type="text" name="rest name" placeholder="Enter rest name" /><br /><br />
+      <input
+        type="number"
+        name="table"
+        placeholder="Enter number of tables"
+      /><br /><br />
+      <input type="button" value="submit" id="submitBtn" /><br /><br />
+      <input
+        type="button"
+        value="login with google"
+        id="loginWithGoogle"
+      /><br /><br />
+    </form>
+  </body>
+</html>
