@@ -3,7 +3,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  OAuthProvider
+  OAuthProvider,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { app } from "../config.js";
 
@@ -19,16 +19,20 @@ formSubmitBtn.addEventListener("click", (e) => {
   if (inputFields[0].value != "" && inputFields[0].value != null) {
     if (inputFields[1].value != "" && inputFields[1].value != null) {
       if (inputFields[2].checked == true) {
-        let email = inputFields[1].value;
-        let password = inputFields[2].value;
+        let email = inputFields[0].value;
+        let password = inputFields[1].value;
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
-            console.log(userCredential.user);
-            window.location.href = 'https://effective-halibut-rqr6g9p9wxjh5466-5000.app.github.dev/login/'
+            emailIsVerified();
           })
           .catch((error) => {
-            console.log(error.code);
-            console.log(error.message);
+            console.log(error)
+            errBox.innerText = `Invalid Credential 🚨`;
+            setInterval(() => {
+              errBox.style.animation =
+                "error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20)";
+            }, 500);
+            errBox.removeAttribute("style");
           });
       } else {
         errBox.innerText = `Accept the terms and policy 🚨`;
@@ -49,8 +53,7 @@ formSubmitBtn.addEventListener("click", (e) => {
   } else {
     errBox.innerText = "Email is required. 🙄";
     setInterval(() => {
-      errBox.style.animation =
-        "error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20)";
+      errBox.style.animation = "error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20)";
     }, 500);
     errBox.removeAttribute("style");
   }
@@ -58,41 +61,54 @@ formSubmitBtn.addEventListener("click", (e) => {
 
 
 // signin with google Oauth provider
-let googleSigninBtn = document.getElementById('googleSigninBtn');
-googleSigninBtn.addEventListener('click', (e) => {
+let googleSigninBtn = document.getElementById("googleSigninBtn");
+googleSigninBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
-  .then((result) => {
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    const user = result.user;
-    console.log(credential, token, user)
-  }).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    const email = error.customData.email;
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    console.log(errorCode, errorMessage, email, credential)
-  });
-})
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
+      console.log(credential, token, user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(errorCode, errorMessage, email, credential);
+    });
+});
 
-let appleSigninBtn = document.getElementById('appleSigninBtn');
-appleSigninBtn.addEventListener('click', (e) => {
+let appleSigninBtn = document.getElementById("appleSigninBtn");
+appleSigninBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  const provider = new OAuthProvider('apple.com');
+  const provider = new OAuthProvider("apple.com");
   signInWithPopup(auth, provider)
-  .then((result) => {
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    const user = result.user;
-    console.log(credential, token, user)
-  }).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    const email = error.customData.email;
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    console.log(errorCode, errorMessage, email, credential)
-  });
-})
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
+      console.log(credential, token, user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(errorCode, errorMessage, email, credential);
+    });
+});
 
+function emailIsVerified() {
+  if (auth.currentUser.emailVerified) {
+    window.location.href = "https://google.com";
+  } else {
+    errBox.innerText = "You have to verify Email. 📧";
+    setInterval(() => {
+      errBox.style.animation = "error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20)";
+    }, 500);
+    errBox.removeAttribute("style");
+  }
+}
