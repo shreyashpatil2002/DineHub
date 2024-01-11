@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div id="errMsg"></div>
+        <div class="form">
+            <form action="#">
+                <h1>Welcome Back !</h1>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="checkbox" name="checkbox" id="checkbox">
+                <label for="checkbox" id="checkboxText">I agree to <a href="#">terms and policy</a></label>
+                <button id="signupBtn">signup</button>
+                <span>Or</span>
+                <div class="OauthBox">
+                    <button id="googleSigninBtn"><img src="../Assets/images/googleBtnImg.svg" alt="google logo">Sign in with Google</button>
+                    <button id="appleSigninBtn"><img src="../Assets/images/appleBtnImg.svg" alt="apple logo">Sign in with Apple</button>
+                </div>
+                <span id="signinLink">Don't have an account? <a href="../signup">Sign Up</a></span>
+            </form>
+        </div>
+        <div class="image"></div>
+    </div>
+    <script type="module" src="../config.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
