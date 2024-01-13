@@ -3,89 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Firebase Basics</title>
-    <script type="module">
-      // first Initialize the app
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyD9ZAKxJ701Siixxpeu_qMyaeOCEwlANlk",
-        authDomain: "resto-53821.firebaseapp.com",
-        projectId: "resto-53821",
-        storageBucket: "resto-53821.appspot.com",
-        messagingSenderId: "326918236717",
-        appId: "1:326918236717:web:915e33ed359e463465e6a4",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-
-      import {
-        getFirestore,
-        collection,
-        addDoc,
-        setDoc,
-        doc
-      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-      const database = getFirestore(app);
-
-      let btn = document.getElementById("submitBtn");
-      btn.addEventListener("click", () => {
-        let restName = document.querySelectorAll('input')[0].value;
-        let NoOfTables = document.querySelectorAll('input')[1].value;
-        console.log(restName);
-        let collectionRef = doc(database, 'restaurant', restName)
-        setDoc(collectionRef, {
-          RestName: restName,
-          Tables: NoOfTables
-        })
-        .then((responce) => {
-          console.log(responce);
-          let docRef = doc(database, 'restaurant', restName, 'foodItems', 'Vadapav')
-          setDoc(docRef, {
-            
-          })
-        })                       
-        .catch((err) => {                            
-          console.log(err);                          
-        }) 
-
-
-
-
-        // let userEmail = document.querySelectorAll("input")[0].value;
-        // let userPass = document.querySelectorAll("input")[1].value;
-        // let docref = doc(database, 'Restaurant', `${userEmail}`)
-        // setDoc(docref , { 
-        //   email: userEmail,
-        //   password: userPass
-        // })               
-        // .then((responce) => {
-        //   console.log(responce);
-        //   createLogic(userEmail);
-        // })                       
-        // .catch((err) => {                            
-        //   console.log(err);                          
-        // })                                                    
-      });
-    </script>
+    <link
+      rel="shortcut icon"
+      href="./Assets/images/DineHubLogo.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>DineHub</title>
   </head>
-
   <body>
-    <form action="#">
-      <h1>Login form</h1>
-      <input type="text" name="rest name" placeholder="Enter rest name" /><br /><br />
-      <input
-        type="number"
-        name="table"
-        placeholder="Enter number of tables"
-      /><br /><br />
-      <input type="button" value="submit" id="submitBtn" /><br /><br />
-      <input
-        type="button"
-        value="login with google"
-        id="loginWithGoogle"
-      /><br /><br />
-    </form>
+    <div id="hero">
+      <section>
+        <header>
+          <h1 class="logo">DineHub</h1>
+          <nav>
+            <ul class="menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </nav>
+          <div id="accountBtn">
+            <a href="../public/login/">Sign In</a>
+            <button><a href="../public/signup/">Get Started</a></button>
+          </div>
+        </header>
+        <div class="container">
+          <div class="content">
+            <h2>Find the best</h2><h2> restaurants, cafés, and</h2><h2>bars</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptatum, quibusdam, quia, voluptates voluptate quod
+              exercitationem quos doloribus quas voluptatibus quidem
+              reprehenderit.
+            </p>
+            <button>Get Started</button>
+          </div>
+          <div class="img">
+            <img src="./Assets/images/Main image.svg" alt="heroImage" />
+            <img src="./Assets/images/Chart 2.svg" alt="heroImage" id="chart1"/>
+            <img src="./Assets/images/Chart 1.svg" alt="heroImage" id="chart2"/>
+          </div>
+        </div>
+      </section>
+      <section id="animeImg">
+        <img src="https://png.pngtree.com/png-clipart/20230414/original/pngtree-isolated-burger-on-transparent-background-png-image_9055072.png" alt="burger image">
+      </section>
+      <section></section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/main.js"></script>
   </body>
 </html>
