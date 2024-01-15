@@ -13,15 +13,16 @@ a {
   color: inherit;
 }
 #hero {
-    height: 100vh;
-    padding: 0 2rem;
-    overflow-y: scroll;
-    /* scroll-snap-type: y mandatory; */
+  height: 100vh;
+  padding: 0 2rem;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  transition: all 0.5s ease;
 }
 #hero section {
   height: 100vh;
-  /* scroll-snap-align: start; */
-  /* scroll-snap-stop: always; */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 #hero header {
   display: flex;
@@ -61,74 +62,151 @@ a {
   color: #008081;
   font-weight: 500;
 }
-#hero .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 90%;
+#hero #pageOne .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
 }
-#hero .container .content {
-    width: 50%;
-    padding-right: 2rem;
+#hero #pageOne .container .content {
+  width: 50%;
+  padding-right: 2rem;
 }
-#hero .container .content h2 {
-    line-height: 2.5rem;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+#hero #pageOne .container .content h2 {
+  line-height: 2.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
-#hero .container .content p {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
+#hero #pageOne .container .content p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
-#hero .container .content button {
-    font-weight: 500;
-    padding: 0.5rem 1.5rem;
-    border: none;
-    font-size: 1rem;
-    background: #008081;
-    color: white;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+#hero #pageOne .container .content button {
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  background: #008081;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
-#hero .container .content button:hover {
-    background: #006666;
+#hero #pageOne .container .content button:hover {
+  background: #006666;
 }
-#hero .container .img {
-    width: 50%;
-    padding-right: 2rem;
-    position: relative;
-    overflow: hidden;
+#hero #pageOne .container .img {
+  width: 50%;
+  padding-right: 2rem;
+  position: relative;
+  overflow: hidden;
 }
-#hero .container .img img {
-    width: 300px;
+#hero #pageOne .container .img img {
+  width: 300px;
 }
-#hero .container .img img:nth-child(1) {
-    width: 80%;
-    display: flex;
-    margin: auto;
+#hero #pageOne .container .img img:nth-child(1) {
+  width: 80%;
+  display: flex;
+  margin: auto;
 }
-#hero .container .img img:nth-child(2) {
-    width: 60%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10;
+#hero #pageOne .container .img img:nth-child(2) {
+  width: 60%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
 }
-#hero .container .img img:nth-child(3) {
-    width: 80%;
-    height: 55%;
-    position: absolute;
-    bottom: 0;
-    left: 50;
+#hero #pageOne .container .img img:nth-child(3) {
+  width: 80%;
+  height: 55%;
+  position: absolute;
+  bottom: 0;
+  left: 50;
 }
-#hero section:nth-child(2) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#pageTwo {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-#hero section:nth-child(2) img {
-    height: 50%;
+#pageTwo .mobileArea {
+  height: 100%;
+  flex-basis: 50%;
+  /* overflow: hidden; */
+  position: relative;
+  perspective: 500px;
+}
+#pageTwo .container {
+  height: 100%;
+  padding: 0 2rem;
+  background: #008081;
+  color: white;
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  border-radius: 5px 50px 50px 50px;
+  overflow: hidden;
+}
+#pageTwo #sectionImg {
+  width: 200px;
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  z-index: 10;
+}
+#pageTwo .mobileArea #mobile {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#pageTwo .mobileArea .mobileContent {
+  width: 30%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+#pageTwo .mobileArea .mobileContent h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#pageTwo .mobileArea .mobileContent p {
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+#pageTwo .mobileArea .mobileContent b {
+  margin-top: 1rem;
+}
+#pageTwo .mobileArea .mobileContent .mobileBtn {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#pageTwo .mobileArea .mobileContent button {
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  background: #008081;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+#hero #pageTwo .container .content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#hero #pageTwo .container .content p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
