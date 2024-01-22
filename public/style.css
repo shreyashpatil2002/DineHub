@@ -16,13 +16,14 @@ a {
   height: 100vh;
   padding: 0 2rem;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   transition: all 0.5s ease;
+  position: relative;
 }
 #hero section {
   height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  /* scroll-snap-align: start;
+  scroll-snap-stop: always; */
 }
 #hero header {
   display: flex;
@@ -33,6 +34,12 @@ a {
 #hero header .logo {
   font-size: 1.5rem;
   font-weight: 700;
+}
+#hero header #menus {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #hero header .menu {
   width: 25vw;
@@ -73,7 +80,6 @@ a {
   padding-right: 2rem;
 }
 #hero #pageOne .container .content h2 {
-  line-height: 2.5rem;
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -82,6 +88,7 @@ a {
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 1rem;
+  color: #575757;
 }
 #hero #pageOne .container .content button {
   font-weight: 500;
@@ -94,7 +101,7 @@ a {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
-#hero #pageOne .container .content button:hover {
+#hero #pageOne .container .content button:hover, #hero header #accountBtn button:hover {
   background: #006666;
 }
 #hero #pageOne .container .img {
@@ -116,7 +123,7 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 10;
+  z-index: 5;
 }
 #hero #pageOne .container .img img:nth-child(3) {
   width: 80%;
@@ -124,89 +131,455 @@ a {
   position: absolute;
   bottom: 0;
   left: 50;
-}
-#pageTwo {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#pageTwo .mobileArea {
-  height: 100%;
-  flex-basis: 50%;
-  /* overflow: hidden; */
-  position: relative;
-  perspective: 500px;
-}
-#pageTwo .container {
-  height: 100%;
-  padding: 0 2rem;
-  background: #008081;
-  color: white;
-  flex-basis: 50%;
-  display: flex;
-  align-items: center;
-  border-radius: 5px 50px 50px 50px;
-  overflow: hidden;
-}
-#pageTwo #sectionImg {
-  width: 200px;
-  position: absolute;
-  top: 20%;
-  left: 35%;
   z-index: 10;
 }
-#pageTwo .mobileArea #mobile {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+#hero #pageTwo {
+  padding: 2rem 0;
 }
-#pageTwo .mobileArea .mobileContent {
-  width: 30%;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-}
-#pageTwo .mobileArea .mobileContent h4 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-#pageTwo .mobileArea .mobileContent p {
-  font-size: 0.7rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-#pageTwo .mobileArea .mobileContent b {
-  margin-top: 1rem;
-}
-#pageTwo .mobileArea .mobileContent .mobileBtn {
-  margin-top: 1rem;
+#hero #pageTwo .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 90%;
 }
-#pageTwo .mobileArea .mobileContent button {
-  font-weight: 500;
-  padding: 0.5rem 1.5rem;
-  border: none;
+#hero #pageTwo .container .content {
+  width: 50%;
+  padding-right: 2rem;
+}
+#hero #pageTwo .container .content span {
   font-size: 1rem;
-  background: #008081;
-  color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  color: #008080;
+  background-color: #20cfc636;
+  padding: 0.3rem 1rem;
+  border-radius: 3px;
+}
+#hero #pageTwo .container .content img {
+  width: 70px;
+  margin-left: 1rem;
+  margin-bottom: 0.3rem;
 }
 #hero #pageTwo .container .content h2 {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 #hero #pageTwo .container .content p {
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 1rem;
+  color: #575757;
+}
+#hero #pageTwo .container .content button {
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #55555550;
+  font-size: 1rem;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+#hero #pageTwo .container .img {
+  width: 50%;
+  padding-right: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+#hero #pageTwo .container .img img {
+  width: 300px;
+}
+#hero #pageTwo .container .img img:nth-child(1) {
+  width: 80%;
+  display: flex;
+  margin: auto;
+}
+#hero #pageTwo .container .img img:nth-child(2) {
+  width: 60%;
+  position: absolute;
+  top: 0;
+  right: 15%;
+  z-index: 5;
+}
+#hero #pageTwo .container .img img:nth-child(3) {
+  width: 80%;
+  height: 55%;
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  z-index: 10;
+}
+#hero #pageThree {
+  padding: 2rem 0;
+}
+#hero #pageThree .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
+}
+#hero #pageThree .container .content {
+  width: 50%;
+  padding-right: 2rem;
+}
+#hero #pageThree .container .content span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #008080;
+  background-color: #20cfc636;
+  padding: 0.3rem 1rem;
+  border-radius: 3px;
+}
+#hero #pageThree .container .content img {
+  width: 70px;
+  margin-left: 1rem;
+  margin-bottom: 0.3rem;
+}
+#hero #pageThree .container .content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+#hero #pageThree .container .content p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #575757;
+}
+#hero #pageThree .container .content button {
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #55555550;
+  font-size: 1rem;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+#hero #pageThree .container .img {
+  width: 50%;
+  padding-right: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+#hero #pageThree .container .img img {
+  width: 300px;
+}
+#hero #pageThree .container .img img:nth-child(1) {
+  width: 80%;
+  display: flex;
+  margin: auto;
+}
+#hero #pageThree .container .img img:nth-child(2) {
+  width: 60%;
+  position: absolute;
+  top: 0;
+  left: 15%;
+  z-index: 5;
+}
+#hero #pageThree .container .img img:nth-child(3) {
+  width: 80%;
+  height: 55%;
+  position: absolute;
+  bottom: 0;
+  right: 2%;
+  z-index: 10;
+}
+#hero #pageFour {
+  padding: 2rem 0;
+}
+#hero #pageFour .container {
+  height: 90%;
+}
+#hero #pageFour .container .content span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #008080;
+  background-color: #20cfc636;
+  padding: 0.3rem 1rem;
+  border-radius: 3px;
+}
+#hero #pageFour .container .content img {
+  width: 70px;
+  margin-left: 1rem;
+  margin-bottom: 0.3rem;
+}
+#hero #pageFour .container .content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+#hero #pageFour .container .content p {
+  width: 50%;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #575757;
+}
+#hero #pageFour .container .testimonials {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+#hero #pageFour .container .testimonials .testimonial {
+  width: 30%;
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: 20px 0 20px 0;
+  border: 2px solid #55555550;
+}
+#hero #pageFour .container .testimonials .testimonial .cardHeader {
+  width: 100%;
+  display: flex;
+}
+#hero #pageFour .container .testimonials .testimonial .cardHeader img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+#hero #pageFour .container .testimonials .testimonial .cardHeader h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#hero #pageFour .container .testimonials .testimonial .cardHeader p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #575757;
+}
+#hero #pageFour .container .testimonials .testimonial .cardBody {
+  width: 100%;
+  margin-top: 1rem;
+}
+#hero #pageFour .container .testimonials .testimonial .cardBody p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #575757;
+}
+#hero #pageFour .container .testimonials .testimonial .cardBody .socialLinks {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+#hero #pageFour .container .testimonials .testimonial .cardBody .socialLinks img {
+  width: 22px;
+  margin-right: 0.5rem;
+}
+#hero #pageFour .container .testimonials .testimonial .cardBody .msg {
+  display: flex;
+  float: right;
+}
+#hero #pageFour .container .testimonials .testimonial:nth-child(2) {
+  background: #008080;
+  color: white;
+  border: none;
+}
+#hero #pageFour .container .testimonials .testimonial:nth-child(2) .cardHeader p, #hero #pageFour .container .testimonials .testimonial:nth-child(2) .cardBody p {
+  color: white;
+}
+#hero #pageFour .container .testimonials .testimonial:nth-child(2) .cardBody .socialLinks img {
+  filter: invert(1);
+}
+#hero #pageFive {
+  padding: 2rem 0;
+}
+#hero #pageFive .container {
+  height: 90%;
+}
+#hero #pageFive .container .content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+#hero #pageFive .container .cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+#hero #pageFive .container .cards .card {
+  width: 30%;
+  height: 100%;
+  padding: 1.5rem;
+}
+#hero #pageFive .container .cards .card .cardImg img {
+ width: 25%;
+}
+#hero #pageFive .container .cards .card h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+#hero #pageFive .container .cards .card p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #575757;
+  margin: 1rem 0;
+}
+#hero #pageFive .container .cards .card a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #008080;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+#hero #pageSix {
+  padding: 2rem 0;
+}
+#hero #pageSix .container {
+  background: #008080;
+  color: white;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
+  border-radius: 20px;
+}
+#hero #pageSix .container .content {
+  width: 50%;
+  padding-right: 2rem;
+}
+#hero #pageSix .container .content span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2CDFD5;
+}
+#hero #pageSix .container .content img {
+  width: 70px;
+  margin-left: 1rem;
+  margin-bottom: 0.3rem;
+}
+#hero #pageSix .container .content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+#hero #pageSix .container .content .emailField {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+#hero #pageSix .container .content .emailField input {
+  width: 70%;
+  padding: 0.8rem 1rem;
+  border: none;
+  font-size: 1rem;
+  background: white;
+  border-radius: 5px;
+}
+#hero #pageSix .container .content .emailField button {
+  font-weight: 500;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  background: #2CDFD5;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#hero #pageSix .container .content .emailField button:hover {
+  background: #00bfbf;
+}
+#hero #pageSix .container .content p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  color: #ffffff88;
+}
+#hero #pageSix .container .content p a {
+  color: #2CDFD5;
+  font-weight: 600;
+}
+#hero #pageSix .container .img {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+#hero #pageSix .container .img img {
+  width: 300px;
+}
+#hero #pageSix .container .img img:nth-child(1) {
+  width: 70%;
+  display: flex;
+  margin: auto;
+  border-radius: 35px 5px 35px 5px;
+  margin-left: 30%;
+}
+#hero #pageSix .container .img img:nth-child(2) {
+  width: 50%;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  z-index: 5;
+}
+#hero footer {
+  padding: 2rem;
+  background: #008080;
+  color: white;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+#hero footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#hero footer .container .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2rem;
+}
+#hero footer .container .content .leftSection {
+  width: 40%;
+  padding: 1rem;
+}
+#hero footer .container .content .leftSection h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#hero footer .container .content .social {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+#hero footer .container .content .leftSection .social img {
+  width: 22px;
+  margin-right: 0.5rem;
+}
+#hero footer .container .content .leftSection p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+footer .linkSection {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+footer .linkSection .links h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+footer .linkSection .links ul {
+  list-style: none;
+}
+footer .linkSection .links ul li {
+  margin-bottom: 0.5rem;
+}
+footer .linkSection .links ul li a {
+  font-size: 1rem;
+  font-weight: 500;
 }
