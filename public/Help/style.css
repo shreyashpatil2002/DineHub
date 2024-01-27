@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#hero {
+  height: 100vh;
+  padding: 0 2rem;
+  overflow-y: scroll;
+  transition: all 0.5s ease;
+  position: relative;
+}
+#hero section {
+  height: 100vh;
+}
+#hero header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+#hero header .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+#hero header #menus {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#hero header .menu {
+  width: 25vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+#hero header .menu li {
+  font-size: 1rem;
+}
+#hero header .menu li:hover {
+  color: #008081;
+}
+#hero header #accountBtn button {
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+  background: #008081;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+#hero header #accountBtn > a {
+  color: #008081;
+  font-weight: 500;
+}

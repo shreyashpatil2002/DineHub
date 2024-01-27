@@ -16,14 +16,11 @@ a {
   height: 100vh;
   padding: 0 2rem;
   overflow-y: scroll;
-  /* scroll-snap-type: y mandatory; */
   transition: all 0.5s ease;
   position: relative;
 }
 #hero section {
   height: 100vh;
-  /* scroll-snap-align: start;
-  scroll-snap-stop: always; */
 }
 #hero header {
   display: flex;
@@ -60,13 +57,13 @@ a {
   border: none;
   font-size: 1rem;
   margin-left: 1.5rem;
-  background: #008081;
+  background: #008080;
   color: white;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 #hero header #accountBtn > a {
-  color: #008081;
+  color: #008080;
   font-weight: 500;
 }
 #hero #pageOne .container {
@@ -95,7 +92,7 @@ a {
   padding: 0.5rem 1.5rem;
   border: none;
   font-size: 1rem;
-  background: #008081;
+  background: #008080;
   color: white;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -322,6 +319,7 @@ a {
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
+  overflow: hidden;
 }
 #hero #pageFour .container .testimonials .testimonial {
   width: 30%;
@@ -429,6 +427,7 @@ a {
 }
 #hero #pageSix {
   padding: 2rem 0;
+  overflow: hidden;
 }
 #hero #pageSix .container {
   background: #008080;
@@ -470,6 +469,7 @@ a {
   width: 70%;
   padding: 0.8rem 1rem;
   border: none;
+  outline: none;
   font-size: 1rem;
   background: white;
   border-radius: 5px;
