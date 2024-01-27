@@ -12,6 +12,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 .form {
     flex-basis: 50%;
@@ -19,7 +21,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 #errMsg {
     width: 20%;
@@ -28,7 +29,7 @@
     padding: 5px 12px;
     position: absolute;
     top: 23%;
-    right: 12%;
+    right: -36%;
     transform: translate(-77%, -65%);
     border-radius: 15px;
     color: #fff;
@@ -91,12 +92,14 @@
 }
 .form form #signupBtn {
     margin-top: 1rem;
-    background: #eee;
+    background: #008080;
+    color: #fff;
+    font-size: 1rem;
     cursor: pointer;
     transition: all .3s;
 }
-.form form #signupBtn:hover {
-    background: #e6e6e6;
+.form form #signupBtn:hover, #loginAfterVerifyBtn:hover {
+    background: #006666;
 }
 .form form span {
     display: flex;
@@ -149,4 +152,28 @@
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 5rem 0px 0px 5rem;
+}
+#loader {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    display: none;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+}
+#loader h3, #loader p {
+    text-align: center;
+}
+#loader img {
+    width: 15vw;
+    display: flex;
+    margin: auto;
+}
+#loader video {
+    width: 40vw;
 }
