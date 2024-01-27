@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 }
 #errMsg {
     width: 20%;
@@ -21,7 +22,7 @@
     padding: 5px 12px;
     position: absolute;
     top: 21%;
-    right: 12%;
+    right: -36%;
     transform: translate(-77%, -65%);
     border-radius: 10px;
     color: #fff;
@@ -75,6 +76,7 @@
 #loginAfterVerifyBtn {
     margin-top: 1rem;
     cursor: pointer;
+    background: #008080;
     transition: all .3s;
 }
 #emailVerifyBox h2 {
@@ -99,12 +101,14 @@
 }
 .form form #signupBtn {
     margin-top: 1rem;
-    background: #eee;
+    background: #008080;
+    color: #fff;
+    font-size: 1rem;
     cursor: pointer;
     transition: all .3s;
 }
 .form form #signupBtn:hover, #loginAfterVerifyBtn:hover {
-    background: #e6e6e6;
+    background: #006666;
 }
 .form form span {
     display: flex;
