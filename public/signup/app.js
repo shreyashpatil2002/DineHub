@@ -7,6 +7,12 @@ import {
   sendEmailVerification,
   updateProfile,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import {
+  getFirestore,
+  collection,
+  setDoc,
+  doc,
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { app } from "../config.js";
 
 const auth = getAuth(app);
@@ -80,10 +86,7 @@ googleSigninBtn.addEventListener("click", (e) => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = result.user;
-      console.log(credential, token, user);
+      createDatabaseUser();
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -147,4 +150,22 @@ function continueToLogin() {
   <p>after verificaiton login here</p>
   <a href="../login/"><button id="loginAfterVerifyBtn">Login</button></a>
 </div>`;
+}
+
+function createDatabaseUser() {
+  const db = getFirestore(app);
+  const docRef = doc(db, `restaurant/${auth.currentUser.uid}`);
+  setDoc(docRef, {
+    name: auth.currentUser.displayName,
+    email: auth.currentUser.email,
+    photoURL: auth.currentUser.photoURL,
+  })
+    .then(() => {
+      setInterval(() => {
+        window.location.href = `${window.location.origin}/public/dashboard`;
+      }, Math.floor(Math.random() * (1000 - 500) + 500));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
