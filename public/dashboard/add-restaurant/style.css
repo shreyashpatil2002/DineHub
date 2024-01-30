@@ -21,7 +21,7 @@
     background-color: rgba(255, 35, 35, 0.851);
     padding: 5px 12px;
     position: absolute;
-    top: 21%;
+    top: 30%;
     right: -36%;
     transform: translate(-77%, -65%);
     border-radius: 10px;
@@ -66,6 +66,7 @@
 .form form input, #loginAfterVerifyBtn{
     width: 100%;
     margin-bottom: 1rem;
+    margin-top: .6rem;
     border-radius: 15px;
     border: none;
     outline: none;
@@ -99,7 +100,7 @@
 .form form label#checkboxText {
     font-size: 13px;
 }
-.form form #signupBtn {
+.form form #addRestBtn {
     margin-top: 1rem;
     background: #008080;
     color: #fff;
@@ -107,7 +108,7 @@
     cursor: pointer;
     transition: all .3s;
 }
-.form form #signupBtn:hover, #loginAfterVerifyBtn:hover {
+.form form #addRestBtn:hover, #loginAfterVerifyBtn:hover {
     background: #006666;
 }
 .form form span {
@@ -152,4 +153,22 @@
     margin-left: 4px;
     text-decoration: none;
     color: rgb(0, 89, 255);
+}
+.image {
+    flex-basis: 50%;
+    height: 100%;
+    background-image: url(../../Assets/images/undraw_chef_cu-0-r.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5rem 0px 0px 5rem;
+}
+a {
+    text-decoration: none;
+    color: #008080;
+}
+#path {
+    position: absolute;
+    top: 10%;
+    left: 7.8%;
 }
