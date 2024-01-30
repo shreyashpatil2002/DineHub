@@ -72,7 +72,6 @@ googleSigninBtn.addEventListener("click", (e) => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
-      console.log(result.user.uid);
       emailIsVerified();
     })
     .catch((error) => {
@@ -124,12 +123,12 @@ function createDatabaseUser() {
     photoURL: auth.currentUser.photoURL,
   })
     .then(() => {
-      console.log(auth.currentUser);
       setInterval(() => {
         window.location.href = `${window.location.origin}/public/dashboard`;
-      }, 5000);
+      }, Math.floor(Math.random() * (1000 - 500) + 500));
     })
     .catch((error) => {
       console.log(error);
     });
 }
+
