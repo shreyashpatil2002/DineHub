@@ -24,6 +24,7 @@ formSubmitBtn.addEventListener("click", (e) => {
   if (inputFields[0].value != "" && inputFields[0].value != null) {
     if (inputFields[1].value != "" && inputFields[1].value != null) {
       if (inputFields[2].value != "" && inputFields[2].value != null) {
+        document.querySelector(".loader").style.display = "block";
         addRestaurant();
       } else {
         errBox.innerText = `No. of tables is required. 😬`;
