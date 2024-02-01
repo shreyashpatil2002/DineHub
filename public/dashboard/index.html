@@ -1,13 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DineHub Dashboard</title>
-</head>
-<body>
-    <h1>Dashboard</h1>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="rightSide">
+        <div class="logo">
+          <img src="images/logo.png" alt="logo" />
+        </div>
+        <div class="title">
+          <h1>DineHub</h1>
+        </div>
+        <div class="subtitle">
+          <h2>Dashboard</h2>
+        </div>
+        <div class="buttons">
+          <button class="btn">View Orders</button>
+          <button class="btn">View Menu</button>
+          <button class="btn">View Customers</button>
+          <button class="btn">View Reviews</button>
+        </div>
+        <div class="leftSide">
+            <div class="topSection">
+                <div class="searchBar">
+                    <input type="text" placeholder="Search" />
+                    <button class="btn">Search</button>
+                </div>
+                <div class="userAccount">
+                    <div class="userImage">
+                        <img src="images/user.png" alt="user" />
+                    </div>
+                    <div class="userDetails">
+                        <h3>John Doe</h3>
+                        <p>Admin</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomSection">
+                <div class="recentOrders">
+                    <h3>Recent Orders</h3>
+                    <table>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer Name</th>
+                            <th>Order Date</th>
+                            <th>Order Status</th>
+                            <th>Order Total</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>20/10/2020</td>
+                            <td>Delivered</td>
+                            <td>$200.00</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>John Doe</td>
+                            <td>20/10/2020</td>
+                            <td>Delivered</td>
+                            <td>$200.00</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>John Doe</td>
+                            <td>20/10/2020</td>
+                            <td>Delivered</td>
+                            <td>$200.00</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>John Doe</td>
+                            <td>20/10/2020</td>
+                            <td>Delivered</td>
+                            <td>$200.00</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>John Doe</td>
+                            <td>20/10/2020</td>
+                            <td>Delivered</td>
+                            <td>$200.00</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="recentCustomers">
+                    <h3>Recent Customers</h3>
+                    <table>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Customer Name</th>
+                            <th>Customer Email</th>
+                            <th>Customer Phone</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>
+            </div>
 
+        </div>
+      </div>
+    </div>
     <script type="module" src="app.js"></script>
-</body>
+  </body>
 </html>
