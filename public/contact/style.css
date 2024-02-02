@@ -66,3 +66,69 @@ a {
   color: #008081;
   font-weight: 500;
 }
+
+
+#hero footer {
+  padding: 2rem;
+  background: #008080;
+  color: white;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+#hero footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#hero footer .container .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2rem;
+}
+#hero footer .container .content .leftSection {
+  width: 40%;
+  padding: 1rem;
+}
+#hero footer .container .content .leftSection h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#hero footer .container .content .social {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+#hero footer .container .content .leftSection .social img {
+  width: 22px;
+  margin-right: 0.5rem;
+}
+#hero footer .container .content .leftSection p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+footer .linkSection {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+footer .linkSection .links h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+footer .linkSection .links ul {
+  list-style: none;
+}
+footer .linkSection .links ul li {
+  margin-bottom: 0.5rem;
+}
+footer .linkSection .links ul li a {
+  font-size: 1rem;
+  font-weight: 500;
+}
