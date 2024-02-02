@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #636363;
+  width: 100%;
+}
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.hero .rightSide {
+  width: 20vw;
+  height: 100vh;
+  padding: 10px;
+  position: sticky;
+}
+.hero .rightSide header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+.hero .rightSide .actionTab {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero .rightSide .actionTab .action {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  padding: 1.4rem 3rem;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.hero .rightSide .actionTab .action p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+.hero .rightSide .actionTab .action:hover {
+  background: #fff;
+  color: royalblue;
+  border: 1px solid royalblue;
+}
+.hero .rightSide .actionTab .active {
+  color: #fff;
+  background: royalblue;
+  box-shadow: 0px 0px 10px royalblue;
+  border: 1px solid royalblue;
+}
+.hero .rightSide .actionTab .active:hover {
+  color: #fff;
+  background: royalblue;
+  box-shadow: 0px 0px 10px royalblue;
+}
+.hero .rightSide .actionTab .action img {
+  display: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.hero .leftSide {
+  width: 80vw;
+  height: auto;
+  padding: 10px;
+  overflow-y: scroll;
+}
+.hero .leftSide header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+.hero .leftSide header .searchBar {
+  width: 50%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+.hero .leftSide header .rightOpt {
+  width: 35%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero .leftSide header .rightOpt img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.hero .leftSide header .profile,
+.hero .leftSide header .notification {
+  width: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.hero .leftSide header .profile img,
+.hero .leftSide header .notification img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+.hero .leftSide header .profile p img {
+  width: 15px;
+  height: 100%;
+  margin-left: 0.4rem;
+  margin-top: 0.4rem;
+}
+.hero .leftSide main {
+  width: 100%;
+  height: auto;
+  padding: 1rem 2rem;
+}
+
+#errMsg {
+  width: 20%;
+  text-align: center;
+  background-color: rgba(255, 35, 35, 0.851);
+  padding: 5px 12px;
+  position: absolute;
+  top: 21%;
+  right: -36%;
+  transform: translate(-77%, -65%);
+  border-radius: 10px;
+  color: #fff;
+  z-index: -1;
+  box-shadow: 0px 3px 5px #6c6c6cba;
+}
+.errMsg {
+  animation: error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20);
+}
+@keyframes error {
+  0% {
+      right: -12%;
+      opacity: 0;
+  }
+  15% {
+      right: 35%;
+      opacity: 1;
+  }
+  85% {
+      right: 35%;
+      opacity: 1;
+  }
+  100% {
+      right: 100%;
+      opacity: 0;
+  }
+}
+.form {
+  flex-basis: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form h1 {
+  margin-bottom: 2rem;
+}
+.form form {
+  width: 70%;
+}
+.form form input, #loginAfterVerifyBtn{
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  padding: 8px 20px;
+  border: 1px solid #d1d1d1;
+}

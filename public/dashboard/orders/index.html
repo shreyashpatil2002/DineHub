@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>DineHub Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="rightSide" id="menus">
+        <header>
+          <h1>DineHub</h1>
+        </header>
+        <div class="actionTab">
+          <a href="../">
+            <div class="action">
+              <span class="material-symbols-outlined">
+               home
+               </span>
+              <p>Home</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="action active">
+              <span class="material-symbols-outlined">
+                local_mall
+                </span>
+              <p>Orders</p>
+            </div>
+          </a>
+          <a href="../sales/">
+            <div class="action">
+              <span class="material-symbols-outlined">
+               monitoring
+                </span>
+             <p>Sales</p>
+          </div>
+          </a>
+          <a href="../feedback/">
+            <div class="action">
+              <span class="material-symbols-outlined">
+               chat
+               </span>
+             <p>Feedback</p>
+            </div>
+          </a>
+          <a href="../settings/">
+            <div class="action">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+              <p>Settings</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="leftSide" id="headerContent">
+        <header>
+          <div class="searchBar">
+            <p>RestaurantName @ Orders</p>
+          </div>
+          <div class="rightOpt">
+            <div class="profile" id="profile">
+              <img src="../../Assets/svg/user-solid.svg" alt="user image">
+              <p>Username <img src="../../Assets/svg/chevron-down-solid.svg" alt="dropDown"></p>
+            </div>
+            <div class="notification">
+              <img src="../../Assets/svg/bell-solid.svg" alt="bell image">
+              <p>Notification</p>
+            </div>
+          </div>
+        </header>
+        <main>
+          <div class="ordersTable">
+           <h2>Todays Orders</h2>
+           <span>Show 
+            <select name="entries" id="entries">
+              <option value="Today">Today</option>
+              <option value="Week">Week</option>
+              <option value="Month">Month</option>
+              <option value="Year">Year</option>
+            </select> 
+           </span>
+           <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Order Id</th>
+                <th>Table No</th>
+                <th>Order Items</th>
+                <th>Quantity</th>
+                <th>Order Date</th>
+                <th>Order Status</th>
+                <th>Order Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><p>&plus;</p></td>
+                <td>1</td>
+                <td>1</td>
+                <td>burder, samosa</td>
+                <th></th>
+                <td>12/12/2020</td>
+                <td class=" status delivered"><p>Delivered</p></td>
+                <td>Rs. 500</td>
+                <td><img src="../../Assets/svg/ellipsis-vertical-solid.svg" alt=""></td>
+              </tr>
+              <tr>
+                <td><p>&plus;</p></td>
+                <td>2</td>
+                <td>2</td>
+                <td></td>
+                <th></th>
+                <td>12/12/2020</td>
+                <td class=" status pending"><p>Pending</p></td>
+                <td>Rs. 500</td>
+                <td><img src="../../Assets/svg/ellipsis-vertical-solid.svg" alt=""></td>
+              </tr>
+              <tr>
+                <td><p>&plus;</p></td>
+                <td>3</td>
+                <td>3</td>
+                <td></td>
+                <th></th>
+                <td>12/12/2020</td>
+                <td class=" status canceld"><p>Canceld</p></td>
+                <td>Rs. 500</td>
+                <td><img src="../../Assets/svg/ellipsis-vertical-solid.svg" alt=""></td>
+            </tbody>
+           </table>
+          </div>
+          <div class="income">
+            <h2>Total Orders</h2>
+            <div id="incomeChart"></div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    
+    <script type="module" src="app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
