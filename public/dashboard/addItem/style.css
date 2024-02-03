@@ -18,6 +18,44 @@ a {
   height: 100vh;
   display: flex;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+#loader {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+#loader img {
+  width: 80px;
+  height: 80px;
+}
+#msg {
+  width: 20%;
+  text-align: center;
+  padding: 5px 12px;
+  position: absolute;
+  top: 8%;
+  right: -36%;
+  transform: translate(-77%, -65%);
+  box-shadow: 0px 0px 5px rgba(148, 148, 148, 0.575);
+  border-radius: 10px;
+  z-index: 10;
+  transition: 0.3s;
+}
+#msg p {
+  display: flex;
+  align-items: center;
+}
+#msg p span {
+  margin-right: 0.5rem;
 }
 .hero .rightSide {
   width: 20vw;
@@ -32,6 +70,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 .hero .rightSide .actionTab {
   width: 100%;
@@ -189,7 +228,7 @@ a {
 .form form {
   width: 70%;
 }
-.form form input, #loginAfterVerifyBtn{
+.form form input, .form form textarea, .form form select {
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 15px;
@@ -198,4 +237,43 @@ a {
   font-size: 13px;
   padding: 8px 20px;
   border: 1px solid #d1d1d1;
+  resize: none;
+}
+.form form select {
+  width: 30%;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  padding: 8px 20px;
+  border: 1px solid #d1d1d1;
+}
+.form form select option {
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 15px;
+}
+#uploadBtn {
+  background: royalblue;
+  color: #fff;
+  border: 1px solid royalblue;
+  box-shadow: 0px 0px 10px royalblue;
+  cursor: pointer;
+}
+#imgPreview {
+  width: 50%;
+  height: 200px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #d1d1d1;
+}
+#imgPreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
