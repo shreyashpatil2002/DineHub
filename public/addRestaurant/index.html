@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Assets/images/DineHubLogo.jpg" type="image/x-icon">
+    <title>DineHub Add Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="preloader"><img src="../Assets/Spinning line.gif" alt="Spinning line gif"></div>
+        <div class="loader"></div>
+        <div id="errMsg"></div>
+        <div class="form">
+            <form>
+                <h1>Add Restaurant Details</h1>
+                <label for="name">Restaurant Name</label>
+                <input type="text" name="name" id="name" autocomplete="off" placeholder="Enter Restaurant name">
+                <label for="address">Restaurant Location</label>
+                <input type="text" name="location" id="location" autocomplete="off" placeholder="Enter Restaurant Location">
+                <label for="table">Number of Tables</label>
+                <input type="number" name="tables" id="tables" autocomplete="off" placeholder="Number of Tables">
+                <input type="submit" id="addRestBtn" value="Add Restaurant &plus;">
+            </form>
+        </div>
+        <div class="image"></div>
+    </div>
+    <script src="script.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
