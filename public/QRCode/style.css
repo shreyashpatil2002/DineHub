@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap');
+
+* , *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.hero {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    overflow-x: hidden;
+}
+.hero #path {
+    padding: 3rem;
+}
+.hero .heading {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.hero .qr-code-container {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.hero .qr-code-container .qr-code {
+    width: 18rem;
+    height: 20rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 20px;
+}
+.hero .qr-code-container .qr-code img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: flex;
+    margin: 1rem auto;
+}
+.hero .qr-code-container .qr-code h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+}
+.hero .qr-code-container .qr-code p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.hero .qr-code-container .qr-code button {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.hero>button {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin: 5rem auto;
+    padding: 10px;
+    background: #008081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.hero a {
+    text-decoration: none;
+    color: #fff;
+}   
