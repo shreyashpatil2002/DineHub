@@ -6,6 +6,7 @@ import {
   OAuthProvider,
   sendEmailVerification,
   updateProfile,
+  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import {
   getFirestore,
@@ -36,7 +37,12 @@ formSubmitBtn.addEventListener("click", (e) => {
                 profileUpdate(inputFields[0].value);
               })
               .catch((error) => {
-                console.log(error);
+                errBox.innerText = error.message.split("/")[1].split(")")[0];
+                setInterval(() => {
+                  errBox.style.animation =
+                    "error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20)";
+                }, 500);
+                errBox.removeAttribute("style");
               });
           } else {
             errBox.innerText = `Accept the terms and policy 🚨`;
@@ -159,13 +165,30 @@ function createDatabaseUser() {
     name: auth.currentUser.displayName,
     email: auth.currentUser.email,
     photoURL: auth.currentUser.photoURL,
-  })
+  }, { merge: true })
     .then(() => {
-      setInterval(() => {
-        window.location.href = `${window.location.origin}/public/dashboard`;
-      }, Math.floor(Math.random() * (1000 - 500) + 500));
+      localStorage.setItem("user", JSON.stringify(auth.currentUser));
+      redirectToDashboard();
     })
     .catch((error) => {
       console.log(error);
     });
+}
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    if (user.emailVerified) {
+      localStorage.setItem("user", JSON.stringify(auth.currentUser));
+      redirectToDashboard();
+    }
+  }
+  else {
+    document.querySelector(".preloader").style.display = "none";
+  }
+});
+
+const redirectToDashboard = () => {
+  setInterval(() => {
+    window.location.href = `${window.location.origin}/public/addRestaurant/`;
+  }, Math.floor(Math.random() * (1000 - 500) + 1000));
 }

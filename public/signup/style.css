@@ -162,3 +162,15 @@
     background-repeat: no-repeat;
     border-radius: 5rem 0px 0px 5rem;
 }
+.preloader {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 9999;
+}
