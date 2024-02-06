@@ -32,6 +32,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 .hero .rightSide .actionTab {
   width: 100%;
@@ -101,10 +102,11 @@ a {
   padding: 0.4rem;
 }
 .hero .leftSide header .rightOpt {
-  width: 35%;
+  width: 30%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 .hero .leftSide header .rightOpt img {
   width: 40px;
@@ -116,14 +118,65 @@ a {
 }
 .hero .leftSide header .profile,
 .hero .leftSide header .notification {
-  width: 50%;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-.hero .leftSide header .profile img,
+.hero .leftSide header .rightOpt #dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1;
+}
+.hero .leftSide header .rightOpt #dropdown>span {
+  float: right;
+  cursor: pointer;
+}
+.hero .leftSide header .rightOpt #dropdown p {
+  text-align: center;
+}
+.hero .leftSide header .rightOpt #dropdown p:nth-child(2) {
+  font-weight: bold;
+}
+.hero .leftSide header .rightOpt #dropdown button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .leftSide header .rightOpt #dropdown button span {
+  margin-right: 0.5rem;
+}
+.hero .leftSide header .rightOpt #dropdown p img {
+  width: 50px;
+  height: 50px;
+  margin: none;
+}
+.hero .leftSide header .profile img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.hero .leftSide header .notification img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
 .hero .leftSide header .notification img {
   width: 20px;
   height: 20px;
@@ -140,133 +193,15 @@ a {
   height: auto;
   padding: 1rem 2rem;
 }
-.hero .leftSide main .ordersTable {
+.preloader {
   width: 100%;
-  max-height: 80vh;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  overflow-y: scroll;
-}
-.ordersTable::-webkit-scrollbar {
-  width: 5px;
-}
-.ordersTable::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-.ordersTable::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-.hero .leftSide main .ordersTable h2 {
-  width: 100%;
-  height: 10%;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #636363;
-  margin-bottom: 1rem;
-}
-.hero .leftSide main .ordersTable span {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #636363;
-}
-.hero .leftSide main .ordersTable span select {
-  width: 10%;
-  height: auto;
-  outline: none;
-  cursor: pointer;
-  background: transparent;
-  padding: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #636363;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  border-radius: 10px;
-  border: 1px solid #eee;
-}
-.hero .leftSide main .ordersTable table {
-  width: 100%;
-  height: auto;
-  color: #636363;
-  border-collapse: collapse;
-}
-.hero .leftSide main .ordersTable table thead {
-  width: 100%;
-  height: 10%;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-.hero .leftSide main .ordersTable table tr {
-  width: 100%;
-  height: 50px;
-  padding: 0 1rem;
-}
-.hero .leftSide main .ordersTable table thead tr th {
-  text-align: left;
-  padding: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #636363;
-  text-transform: uppercase;
-}
-.hero .leftSide main .ordersTable table tbody {
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-}
-.hero .leftSide main .ordersTable table tbody tr {
-  width: 100%;
-  border-bottom: 1px solid #eee;
-}
-.hero .leftSide main .ordersTable table tbody tr td {
-  text-align: left;
-  padding: 0.5rem;
-  font-size: .9rem;
-  font-weight: 500;
-  color: #636363;
-}
-.hero .leftSide main .ordersTable table tbody tr td:first-child p {
-  background: #008081;
-  color: #fff;
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
-  font-size: .9rem;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  font-weight: 500;
-}
-.hero .leftSide main .ordersTable table tbody tr td img{
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-.hero .leftSide main .ordersTable table tbody tr .status p{
-  border-radius: 10px;
-  width: auto;
-  padding: 0.2rem 0.5rem;
-}
-.hero .leftSide main .ordersTable table tbody tr .delivered p{
-  color: green;
-  background: rgba(0, 128, 0, 0.37);
-}
-.hero .leftSide main .ordersTable table tbody tr .pending p{
-  color: #ffab00;
-  background: rgba(255, 171, 0, 0.37);
-}
-.hero .leftSide main .ordersTable table tbody tr .canceld p{
-  color: red;
-  background: rgba(255, 0, 0, 0.37);
-}
-.hero .leftSide main .income {
-  width: 40%;
-  /* height: 15rem; */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  margin-top: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 9999;
 }

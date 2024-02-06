@@ -32,6 +32,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 .hero .rightSide .actionTab {
   width: 100%;
@@ -111,10 +112,11 @@ a {
   color: #636363;
 }
 .hero .leftSide header .rightOpt {
-  width: 35%;
+  width: 30%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 .hero .leftSide header .rightOpt img {
   width: 40px;
@@ -126,14 +128,65 @@ a {
 }
 .hero .leftSide header .profile,
 .hero .leftSide header .notification {
-  width: 50%;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-.hero .leftSide header .profile img,
+.hero .leftSide header .rightOpt #dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1;
+}
+.hero .leftSide header .rightOpt #dropdown>span {
+  float: right;
+  cursor: pointer;
+}
+.hero .leftSide header .rightOpt #dropdown p {
+  text-align: center;
+}
+.hero .leftSide header .rightOpt #dropdown p:nth-child(2) {
+  font-weight: bold;
+}
+.hero .leftSide header .rightOpt #dropdown button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .leftSide header .rightOpt #dropdown button span {
+  margin-right: 0.5rem;
+}
+.hero .leftSide header .rightOpt #dropdown p img {
+  width: 50px;
+  height: 50px;
+  margin: none;
+}
+.hero .leftSide header .profile img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.hero .leftSide header .notification img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
 .hero .leftSide header .notification img {
   width: 20px;
   height: 20px;
@@ -279,4 +332,16 @@ a {
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   margin-top: 1rem;
+}
+.preloader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 9999;
 }
