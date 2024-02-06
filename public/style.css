@@ -160,6 +160,11 @@ a {
   font-weight: 700;
   margin: 1rem 0;
 }
+#hero #pageTwo .container .content h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
 #hero #pageTwo .container .content p {
   font-size: 1rem;
   font-weight: 500;
@@ -241,6 +246,26 @@ a {
   font-weight: 500;
   margin-bottom: 1rem;
   color: #575757;
+}
+#hero #pageThree .container .content .small-icons {
+  width: 100%;
+}
+#hero #pageThree .container .content .small-icons .firstRow, #hero #pageThree .container .content .small-icons .secondRow {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 1rem;
+}
+#hero #pageThree .container .content .small-icons .icon {
+  flex-basis: 40%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+#hero #pageThree .container .content .small-icons img {
+  width: 40px;
+  margin-right: 1rem;
 }
 #hero #pageThree .container .content button {
   font-weight: 500;
@@ -581,4 +606,105 @@ footer .linkSection .links ul li {
 footer .linkSection .links ul li a {
   font-size: 1rem;
   font-weight: 500;
+}
+/* Existing styles */
+
+
+@media only screen and (max-width: 600px) {
+  /* Add your styles for the responsive design here */
+  body {
+    font-size: 14px;
+  }
+  
+  #hero {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  #pageOne header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #pageOne .container {
+    flex-direction: column;
+  }
+  #pageOne .content {
+    text-align: center;
+  }
+  #pageOne .img {
+    display: none;
+  }
+  #hero footer {
+    padding: 1rem;
+    background: #008080;
+    color: white;
+    position: static;
+    width: 100%;
+  }
+  
+  #hero footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #hero footer .container .content {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+  }
+  
+  #hero footer .container .content .leftSection {
+    width: 100%;
+    padding: 0;
+  }
+  
+  #hero footer .container .content .leftSection h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  #hero footer .container .content .social {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  #hero footer .container .content .leftSection .social img {
+    width: 18px;
+    margin-right: 0.3rem;
+  }
+  
+  #hero footer .container .content .leftSection p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  footer .linkSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  footer .linkSection .links h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  footer .linkSection .links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer .linkSection .links ul li {
+    margin-bottom: 0.3rem;
+  }
+  
+  footer .linkSection .links ul li a {
+    font-size: 0.9rem;
+  }
 }
