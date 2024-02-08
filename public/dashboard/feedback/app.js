@@ -2,8 +2,9 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
 import {
   getFirestore,
   collection,
-  setDoc,
+  onSnapshot,
   doc,
+  deleteDoc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { app } from "../../config.js";
 
@@ -24,61 +25,6 @@ document.getElementById("profile").innerHTML = `
               <img src="${userObj.photoURL}" alt="user image">
               <p>${userObj.displayName} <img src="../../Assets/svg/chevron-down-solid.svg" alt="dropDown"></p>`;
 
-function enableOperations() {
-  document.querySelectorAll(".deleteButton").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const docId = e.target.parentElement.id;
-      deleteDoc(doc(db, `restaurant/${userObj.uid}/foodItem/${docId}`))
-        .then(() => {
-          console.log("Document successfully deleted!");
-        })
-        .catch((error) => {
-          console.error("Error removing document: ", error);
-        });
-    });
-  });
-  document.querySelectorAll(".editButton").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      document.querySelector(".editForm").style.display = "block";
-    });
-  });
-  document.querySelectorAll(".closeButton").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      document.querySelector(".editForm").style.display = "none";
-    });
-  });
-  document.querySelectorAll(".updateButton").forEach((button) => {
-    button.addEventListener("click", (e) => {});
-    document.querySelectorAll(".updateButton").forEach((button) => {
-      button.addEventListener("click", (e) => {
-        const docId = e.target.parentElement.parentElement.id;
-        const category =
-          e.target.parentElement.querySelector(".itemCategory").value;
-        const itemName =
-          e.target.parentElement.querySelector(".itemName").value;
-        const itemPrice =
-          e.target.parentElement.querySelector(".itemPrice").value;
-        const itemDesc =
-          e.target.parentElement.querySelector(".itemDesc").value;
-        const itemAvailable =
-          e.target.parentElement.querySelector(".itemAvailable").value;
-        updateDoc(doc(db, `restaurant/${userObj.uid}/foodItem/${docId}`), {
-          itemCategory: category,
-          itemName: itemName,
-          itemPrice: itemPrice,
-          itemDesc: itemDesc,
-          available: itemAvailable,
-        })
-          .then(() => {
-            document.querySelector(".editForm").style.display = "none";
-          })
-          .catch((error) => {
-            console.error("Error updating document: ", error);
-          });
-      });
-    });
-  });
-}
 document.getElementById('dropdown').innerHTML = `
   <span id="profileClose"class="material-symbols-outlined">close</span>
   <p><img src="${userObj.photoURL}" alt="profile pic"></p>
@@ -99,3 +45,53 @@ document.getElementById("profile").addEventListener("click", () => {
     window.location.href = "../login";
   });
 });
+
+const db = getFirestore(app);
+const feedbackCollection = collection(db, `restaurant/${userObj.uid}/feedbacks`);
+
+onSnapshot(feedbackCollection, (querySnapshot) => {
+  document.getElementById("feedbacks").innerHTML = "";
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+    if(doc.id === "demo") return;
+    document.getElementById("feedbacks").innerHTML += `
+    <div class="feedback" id="${doc.id}">
+      <div class="feedbackDetails">
+        <p class="name">${data.name}</p>
+        <p class="email">${data.email}</p>
+        <p class="message">${data.feedback}</p>
+        <p class="rating">${
+          data.rating === "1"
+            ? "😡"
+            : data.rating === "2"
+            ? "😠"
+            : data.rating === "3"
+            ? "😐"
+            : data.rating === "4"
+            ? "😊"
+            : "😍"
+        }</p>
+        <p class="date">${data.date}</p>
+      </div>
+      <button class="deleteButton">Delete</button>
+    </div>`;
+  });
+  enableDelete();
+});  
+
+function enableDelete() {
+  console.log('delete')
+  const deleteButtons = document.querySelectorAll(".deleteButton");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const id = e.target.parentElement.id;
+      deleteDoc(doc(db, `restaurant/${userObj.uid}/feedbacks/${id}`))
+      .then(() => {
+        document.getElementById(id).remove();
+      })
+      .catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+    });
+  });
+}

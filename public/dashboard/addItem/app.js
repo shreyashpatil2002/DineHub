@@ -2,7 +2,7 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
 import {
   getFirestore,
   collection,
-  setDoc,
+  addDoc,
   doc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import {
@@ -79,19 +79,14 @@ function AddItemToDatabase(file, itemName, itemPrice, itemDesc, itemCategory) {
     getDownloadURL(snapshot.ref).then((downloadURL) => {
       imgSrc = downloadURL;
       let db = getFirestore(app);
-      setDoc(
-        doc(db, `restaurant/${auth.currentUser.uid}/foodItem`, `${itemName}`),
-        {
-          itemName: itemName,
-          itemPrice: itemPrice,
-          itemDesc: itemDesc,
-          itemCategory: itemCategory,
-          // itemStock: itemStock,
-          // itemDiscount: itemDiscount,
-          itemImg: imgSrc,
-          available: true,
-        }
-      )
+      addDoc(collection(db, `restaurant/${auth.currentUser.uid}/foodItem`), {
+        itemName: itemName,
+        itemPrice: itemPrice,
+        itemDesc: itemDesc,
+        itemCategory: itemCategory,
+        itemImg: imgSrc,
+        available: true,
+      })
         .then(() => {
           console.log("Document successfully written!");
           document.getElementById("msg").innerHTML = `<p><span class="material-symbols-outlined">
@@ -110,62 +105,6 @@ function AddItemToDatabase(file, itemName, itemPrice, itemDesc, itemCategory) {
         .catch((error) => {
           console.error("Error writing document: ", error);
         });
-    });
-  });
-}
-
-function enableOperations() {
-  document.querySelectorAll(".deleteButton").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const docId = e.target.parentElement.id;
-      deleteDoc(doc(db, `restaurant/${userObj.uid}/foodItem/${docId}`))
-        .then(() => {
-          console.log("Document successfully deleted!");
-        })
-        .catch((error) => {
-          console.error("Error removing document: ", error);
-        });
-    });
-  });
-  document.querySelectorAll(".editButton").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      document.querySelector(".editForm").style.display = "block";
-    });
-  });
-  document.querySelectorAll(".closeButton").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      document.querySelector(".editForm").style.display = "none";
-    });
-  });
-  document.querySelectorAll(".updateButton").forEach((button) => {
-    button.addEventListener("click", (e) => {});
-    document.querySelectorAll(".updateButton").forEach((button) => {
-      button.addEventListener("click", (e) => {
-        const docId = e.target.parentElement.parentElement.id;
-        const category =
-          e.target.parentElement.querySelector(".itemCategory").value;
-        const itemName =
-          e.target.parentElement.querySelector(".itemName").value;
-        const itemPrice =
-          e.target.parentElement.querySelector(".itemPrice").value;
-        const itemDesc =
-          e.target.parentElement.querySelector(".itemDesc").value;
-        const itemAvailable =
-          e.target.parentElement.querySelector(".itemAvailable").value;
-        updateDoc(doc(db, `restaurant/${userObj.uid}/foodItem/${docId}`), {
-          itemCategory: category,
-          itemName: itemName,
-          itemPrice: itemPrice,
-          itemDesc: itemDesc,
-          available: itemAvailable,
-        })
-          .then(() => {
-            document.querySelector(".editForm").style.display = "none";
-          })
-          .catch((error) => {
-            console.error("Error updating document: ", error);
-          });
-      });
     });
   });
 }

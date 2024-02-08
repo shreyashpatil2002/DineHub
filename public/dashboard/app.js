@@ -28,7 +28,7 @@ const userObj = JSON.parse(user);
 
 const db = getFirestore(app);
 const itemsCollection = collection(db, `restaurant/${userObj.uid}/foodItem`);
-console.log(userObj.photoURL);
+
 document.getElementById("profile").innerHTML = `
               <img src="${userObj.photoURL === undefined ? '../Assets/svg/user-solid.svg' : userObj.photoURL}" alt="user image">
               <p>${userObj.displayName} <img src="../Assets/svg/chevron-down-solid.svg" alt="dropDown"></p>`;
@@ -51,7 +51,7 @@ onSnapshot(itemsCollection, (snapshot) => {
         <button class="deleteButton"><span class="material-symbols-outlined">
         delete
         </span> Delete</button>
-        <div class="editForm">
+        <div class="editForm" id="editForm${docId}">
           <button class="closeButton"><span class="material-symbols-outlined">close</span></button>
           <label>Category</label>
           <select class="itemCategory">
@@ -96,25 +96,19 @@ function enableOperations() {
     button.addEventListener("click", (e) => {
       if (!confirm("Are you sure you want to delete this item?")) return;
       const docId = e.target.parentElement.id;
-      deleteDoc(doc(db, `restaurant/${userObj.uid}/foodItem/${docId}`))
-        .then(() => {
-          console.log("Document successfully deleted!");
-        })
-        .catch((error) => {
-          console.error("Error removing document: ", error);
-        });
+      deleteItem(docId);
     });
   });
   document.querySelectorAll(".editButton").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      document.querySelector(".overlay").style.display = "block";
-      document.querySelector(".editForm").style.display = "block";
+    button.addEventListener("click", () => {
+      console.log(button.parentElement.id);
+      openEditForm(button.parentElement.id);
     });
   });
   document.querySelectorAll(".closeButton").forEach((button) => {
-    button.addEventListener("click", (e) => {
+    button.addEventListener("click", () => {
       document.querySelector(".overlay").style.display = "none";
-      document.querySelector(".editForm").style.display = "none";
+      closeEditForm(button.parentElement.id)
     });
   });
   document.querySelectorAll(".updateButton").forEach((button) => {
@@ -137,7 +131,8 @@ function enableOperations() {
         available: itemAvailable,
       })
         .then(() => {
-          document.querySelector(".editForm").style.display = "none";
+          document.querySelector(".overlay").style.display = "none";
+          document.getElementById(button.parentElement.id).style.display = "none";
         })
         .catch((error) => {
           console.error("Error updating document: ", error);
@@ -165,3 +160,21 @@ document.getElementById("profile").addEventListener("click", () => {
     window.location.href = "../login";
   });
 });
+const deleteItem = (docId) => {
+  deleteDoc(doc(db, `restaurant/${userObj.uid}/foodItem/${docId}`))
+    .then(() => {
+      console.log("Document successfully deleted!");
+    })
+    .catch((error) => {
+      console.error("Error removing document: ", error);
+    });
+}
+const openEditForm = (id) => {
+  document.querySelector(".overlay").style.display = "block";
+  document.querySelector(`#editForm${id}`).style.display = "block";
+}
+
+const closeEditForm = (id) => {
+  document.querySelector(".overlay").style.display = "none";
+  document.getElementById(id).style.display = "none";
+}

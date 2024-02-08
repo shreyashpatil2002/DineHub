@@ -222,7 +222,6 @@ a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  position: relative;
 }
 .foodItem {
   width: 280px;
@@ -293,19 +292,19 @@ a {
   margin-right: 0.4rem;
 }
 .editForm {
-  width: 50%;
+  width: 45%;
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: -10%;
-  left: 40%;
-  transform: translateX(-60%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 1rem;
   background-color: #f2f2f2;
   border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
 .editForm .closeButton {
