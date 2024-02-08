@@ -51,7 +51,6 @@
     }
 }
 .form {
-    flex-basis: 50%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -61,9 +60,9 @@
     margin-bottom: 2rem;
 }
 .form form {
-    width: 70%;
+    width: 90%;
 }
-.form form input, #loginAfterVerifyBtn{
+.form form input, .form form textarea{
     width: 100%;
     margin-bottom: 1rem;
     border-radius: 15px;
@@ -73,33 +72,7 @@
     padding: 8px 20px;
     border: 1px solid #d1d1d1;
 }
-#loginAfterVerifyBtn {
-    margin-top: 1rem;
-    cursor: pointer;
-    background: #008080;
-    transition: all .3s;
-}
-#emailVerifyBox h2 {
-    margin-bottom: 1rem;
-}
-.form form div {
-    position: relative;
-}
-.form form div>img {
-    position: absolute;
-    top: 55%;
-    right: 20px;
-    transform: translateY(-45%);
-    display: none;
-}
-.form form input#checkbox {
-    width: auto;
-    margin: 2px;
-}
-.form form label#checkboxText {
-    font-size: 13px;
-}
-.form form #signupBtn {
+.form form #submitBtn {
     margin-top: 1rem;
     background: #008080;
     color: #fff;
@@ -107,49 +80,28 @@
     cursor: pointer;
     transition: all .3s;
 }
-.form form #signupBtn:hover, #loginAfterVerifyBtn:hover {
-    background: #006666;
-}
-.form form span {
-    display: flex;
-    justify-content: center;
-    font-size: 13px;
-    margin-top: .5rem;
-}
-.form form .OauthBox {
+.form form .rating {
     width: 100%;
-    margin: 1rem 0;
+    height: 50px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.form form .OauthBox button {
-    width: 45%;
-    display: flex;
-    align-items: center;
     justify-content: space-evenly;
-    background: transparent;
-    border-radius: 15px;
-    border: none;
-    outline: none;
-    font-size: 13px;
-    border: 1px solid #d1d1d1;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.form form .rating .emotions {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+.form form .rating .emotions label {
+    font-size: 1.4rem;
     cursor: pointer;
+    transition: all .3s;
 }
-.form form .OauthBox button img {
-    width: 30px;
-    margin: 5px;
+.form form .rating .emotions input {
+    display: none;
 }
-.form form .OauthBox button:nth-child(1) img {
-    width: 33px;
-    margin: 2px;
-}
-.form #signinLink {
-    font-size: 14px;
-    font-weight: 600;
-}
-.form form>span>a {
-    margin-left: 4px;
-    text-decoration: none;
-    color: rgb(0, 89, 255);
+.form form .rating .emotions input:checked + label {
+    font-size: 1.7rem;
 }
