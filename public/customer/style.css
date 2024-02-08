@@ -145,6 +145,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 15px;
+    padding: 12px;
 }
 .overlay .content .closeWarning span {
     margin-left: 1rem;
