@@ -4,10 +4,10 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   OAuthProvider,
+  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import {
   getFirestore,
-  collection,
   setDoc,
   doc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -24,30 +24,21 @@ formSubmitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (inputFields[0].value != "" && inputFields[0].value != null) {
     if (inputFields[1].value != "" && inputFields[1].value != null) {
-      if (inputFields[2].checked == true) {
-        let email = inputFields[0].value;
-        let password = inputFields[1].value;
-        signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            emailIsVerified();
-          })
-          .catch((error) => {
-            console.log(error);
-            errBox.innerText = `Invalid Credential 🚨`;
-            setInterval(() => {
-              errBox.style.animation =
-                "error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20)";
-            }, 500);
-            errBox.removeAttribute("style");
-          });
-      } else {
-        errBox.innerText = `Accept the terms and policy 🚨`;
-        setInterval(() => {
-          errBox.style.animation =
-            "error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20)";
-        }, 500);
-        errBox.removeAttribute("style");
-      }
+      let email = inputFields[0].value;
+      let password = inputFields[1].value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          emailIsVerified();
+        })
+        .catch((error) => {
+          console.log(error);
+          errBox.innerText = `Invalid Credential 🚨`;
+          setInterval(() => {
+            errBox.style.animation =
+              "error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20)";
+          }, 500);
+          errBox.removeAttribute("style");
+        });
     } else {
       errBox.innerText = `Password is required. 😬`;
       setInterval(() => {
@@ -117,18 +108,39 @@ function emailIsVerified() {
 function createDatabaseUser() {
   const db = getFirestore(app);
   const docRef = doc(db, `restaurant/${auth.currentUser.uid}`);
-  setDoc(docRef, {
-    name: auth.currentUser.displayName,
-    email: auth.currentUser.email,
-    photoURL: auth.currentUser.photoURL,
-  })
+  setDoc(
+    docRef,
+    {
+      name: auth.currentUser.displayName,
+      email: auth.currentUser.email,
+      photoURL: auth.currentUser.photoURL,
+    },
+    { merge: true }
+  )
     .then(() => {
-      setInterval(() => {
-        window.location.href = `${window.location.origin}/public/dashboard`;
-      }, Math.floor(Math.random() * (1000 - 500) + 500));
+      localStorage.setItem("user", JSON.stringify(auth.currentUser));
+      redirectToDashboard();
     })
     .catch((error) => {
       console.log(error);
     });
 }
 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    if (user.emailVerified) {
+      localStorage.setItem("user", JSON.stringify(auth.currentUser));
+      redirectToDashboard();
+    } else {
+      document.querySelector(".preloader").style.display = "none";
+    }
+  } else {
+    document.querySelector(".preloader").style.display = "none";
+  }
+});
+
+const redirectToDashboard = () => {
+  setInterval(() => {
+    window.location.href = `${window.location.origin}/public/addRestaurant/`;
+  }, Math.floor(Math.random() * (1000 - 500) + 1000));
+};

@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="overlay"></div>
     <div class="hero">
+      <div class="preloader"><img src="../Assets/Spinning line.gif" alt="spinning line"></div>
       <div class="rightSide" id="menus">
         <header>
           <h1>DineHub</h1>
@@ -46,6 +48,14 @@
              <p>Feedback</p>
             </div>
           </a>
+          <a href="./addItem/">
+            <div class="action">
+              <span class="material-symbols-outlined">
+                add_box
+                </span>
+             <p>Add Item</p>
+            </div>
+          </a>
           <a href="./settings/">
             <div class="action">
               <span class="material-symbols-outlined">
@@ -63,18 +73,17 @@
             <button><img src="../Assets/svg/magnifying-glass-solid.svg" alt=""></button>
           </div>
           <div class="rightOpt">
-            <div class="profile" id="profile">
-              <img src="../Assets/svg/user-solid.svg" alt="user image">
-              <p>Username <img src="../Assets/svg/chevron-down-solid.svg" alt="dropDown"></p>
-            </div>
             <div class="notification">
               <img src="../Assets/svg/bell-solid.svg" alt="bell image">
-              <p>Notification</p>
             </div>
+            <div class="profile" id="profile"></div>
+            <div id="dropdown"></div>
           </div>
         </header>
         <main>
-          <button><a href="./addItem/">Add Food Item</a></button>
+          <h2>Food Items You Have 😎</h2>
+          <div id="foodItems">
+          </div>
         </main>
       </div>
     </div>
@@ -82,6 +91,6 @@
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     
     <script type="module" src="app.js"></script>
-    <script src="script.js"></script>
   </body>
 </html>
+<!-- END: abpxx6d04wxr -->

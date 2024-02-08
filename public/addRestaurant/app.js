@@ -1,20 +1,36 @@
 import {
   getAuth,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import {
   getFirestore,
-  collection,
   setDoc,
   doc,
+  getDoc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { app } from "../../config.js";
+import { app } from "../config.js";
 
 const auth = getAuth(app);
-setTimeout(() => {
-  if (auth.currentUser == null) {
-    window.location.href = "../../login/";
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "../login";
   }
-}, 2000);
+  else if(user && user.emailVerified){
+    let db = getFirestore(app);
+    let docRef = doc(db, `restaurant/${user.uid}`);
+    getDoc(docRef)
+      .then((docSnap) => {
+        if (docSnap.data().RestaurantName === undefined) {
+          document.querySelector(".preloader").style.display = "none";
+        }
+        else {
+          window.location.href = "../dashboard/";
+        }
+      })
+  }
+});
+
+
 // creating a new user with their email and password
 let formSubmitBtn = document.getElementById("addRestBtn");
 let inputFields = document.querySelectorAll(".form form input");

@@ -16,7 +16,7 @@ tl.from("#pageOne .container .img", {
   ease: "bounce",
 });
 gsap.from(
-  "#pageTwo .container .content span, #pageTwo .container .content img, #pageTwo .container .content h2, #pageTwo .container .content p, #pageTwo .container .content button",
+  "#pageTwo .container .content span, #pageTwo .container .content img, #pageTwo .container .content h2, #pageTwo .container .content h5, #pageTwo .container .content p, #pageTwo .container .content button",
   {
     scrollTrigger: {
       trigger: "#pageTwo",
@@ -44,7 +44,7 @@ gsap.from(
   }
 );
 gsap.from(
-  "#pageThree .container .content span, #pageThree .container .content img, #pageThree .container .content h2, #pageThree .container .content p, #pageThree .container .content button",
+  "#pageThree .container .content span, #pageThree .container .content img, #pageThree .container .content h2, #pageThree .container .content h4, #pageThree .container .content p, #pageThree .container .content button",
   {
     scrollTrigger: {
       trigger: "#pageThree",
