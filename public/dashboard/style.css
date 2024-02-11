@@ -367,3 +367,21 @@ a {
   background: #fff;
   z-index: 9999;
 }
+#restcode {
+  padding: 13px 20px;
+  display: flex;
+  align-items: center;
+  background: rgba(68, 0, 255, 0.329);
+  border: 1px solid rgba(68, 0, 255);
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+#restcode span {
+  margin: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgba(68, 0, 255);
+}
+#restcode {
+  color: rgba(68, 0, 255);
+}

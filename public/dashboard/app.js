@@ -9,8 +9,7 @@ const auth = getAuth(app);
 onAuthStateChanged(auth, (user) => {
   if (!user) {
     window.location.href = "../login";
-  }
-  else {
+  } else {
     document.querySelector(".preloader").style.display = "none";
   }
 });
@@ -19,6 +18,7 @@ import {
   collection,
   onSnapshot,
   deleteDoc,
+  getDoc,
   doc,
   updateDoc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -30,9 +30,22 @@ const db = getFirestore(app);
 const itemsCollection = collection(db, `restaurant/${userObj.uid}/foodItem`);
 
 document.getElementById("profile").innerHTML = `
-              <img src="${userObj.photoURL === undefined ? '../Assets/svg/user-solid.svg' : userObj.photoURL}" alt="user image">
-              <p>${userObj.displayName} <img src="../Assets/svg/chevron-down-solid.svg" alt="dropDown"></p>`;
-
+              <img src="${
+                userObj.photoURL === undefined
+                  ? "../Assets/svg/user-solid.svg"
+                  : userObj.photoURL
+              }" alt="user image">
+              <p>${
+                userObj.displayName
+              } <img src="../Assets/svg/chevron-down-solid.svg" alt="dropDown"></p>`;
+const docRef = doc(db, `restaurant/${userObj.uid}`);
+getDoc(docRef).then((docSnap) => {
+  if (docSnap.data()) {
+    document.getElementById("restcode").innerHTML = `<span class="material-symbols-outlined">
+    lock
+    </span> Restaurant Code: ${docSnap.data().RestCode}`;
+  }
+});
 // Update the list of items when any change happens in the Firestore
 onSnapshot(itemsCollection, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
@@ -108,7 +121,7 @@ function enableOperations() {
   document.querySelectorAll(".closeButton").forEach((button) => {
     button.addEventListener("click", () => {
       document.querySelector(".overlay").style.display = "none";
-      closeEditForm(button.parentElement.id)
+      closeEditForm(button.parentElement.id);
     });
   });
   document.querySelectorAll(".updateButton").forEach((button) => {
@@ -132,7 +145,8 @@ function enableOperations() {
       })
         .then(() => {
           document.querySelector(".overlay").style.display = "none";
-          document.getElementById(button.parentElement.id).style.display = "none";
+          document.getElementById(button.parentElement.id).style.display =
+            "none";
         })
         .catch((error) => {
           console.error("Error updating document: ", error);
@@ -142,7 +156,11 @@ function enableOperations() {
 }
 document.getElementById("dropdown").innerHTML = `
   <span id="profileClose"class="material-symbols-outlined">close</span>
-  <p><img src="${userObj.photoURL === undefined ? '../Assets/svg/user-solid.svg' : userObj.photoURL}" alt="profile pic"></p>
+  <p><img src="${
+    userObj.photoURL === undefined
+      ? "../Assets/svg/user-solid.svg"
+      : userObj.photoURL
+  }" alt="profile pic"></p>
   <p>${userObj.displayName}</p>
   <p>${userObj.email}</p>
   <button id="logout"><span class="material-symbols-outlined">
@@ -168,13 +186,13 @@ const deleteItem = (docId) => {
     .catch((error) => {
       console.error("Error removing document: ", error);
     });
-}
+};
 const openEditForm = (id) => {
   document.querySelector(".overlay").style.display = "block";
   document.querySelector(`#editForm${id}`).style.display = "block";
-}
+};
 
 const closeEditForm = (id) => {
   document.querySelector(".overlay").style.display = "none";
   document.getElementById(id).style.display = "none";
-}
+};
