@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap');
+
+* , *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.hero {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+#errMsg {
+    width: 20%;
+    text-align: center;
+    background-color: rgba(255, 35, 35, 0.851);
+    padding: 5px 12px;
+    position: absolute;
+    top: 21%;
+    right: -36%;
+    transform: translate(-77%, -65%);
+    border-radius: 10px;
+    color: #fff;
+    z-index: -1;
+    box-shadow: 0px 3px 5px #6c6c6cba;
+}
+.errMsg {
+    animation: error 3s cubic-bezier(0.18, 0.87, 0.63, 1.20);
+}
+@keyframes error {
+    0% {
+        right: -12%;
+        opacity: 0;
+    }
+    15% {
+        right: 35%;
+        opacity: 1;
+    }
+    85% {
+        right: 35%;
+        opacity: 1;
+    }
+    100% {
+        right: 100%;
+        opacity: 0;
+    }
+}
+.form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form h1 {
+    margin-bottom: 2rem;
+}
+.form form {
+    width: 90%;
+}
+.form form input, .form form textarea{
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    padding: 8px 20px;
+    border: 1px solid #d1d1d1;
+}
+.form form #submitBtn {
+    margin-top: 1rem;
+    background: #008080;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+.form form .rating {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.form form .rating .emotions {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+.form form .rating .emotions label {
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+.form form .rating .emotions input {
+    display: none;
+}
+.form form .rating .emotions input:checked + label {
+    font-size: 1.7rem;
+}

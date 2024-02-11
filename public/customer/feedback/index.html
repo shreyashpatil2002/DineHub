@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../Assets/images/DineHubLogo.jpg"
+      type="image/x-icon"
+    />
+    <title>DineHub Feedback</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <div id="errMsg"></div>
+      <div class="form">
+        <form>
+          <h1>Give your Feedback</h1>
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            autocomplete="off"
+            placeholder="Enter your name"
+          />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="off"
+            placeholder="Enter your email"
+          />
+          <label for="feedback">Feedback</label>
+          <textarea
+            name="feedback"
+            id="feedback"
+            rows="5"
+            placeholder="Enter your feedback"
+          ></textarea>
+          <div class="rating">
+            <label for="rating">Rating :</label>
+            <div class="emotions" id="rating">
+              <input type="radio" name="rating" id="rating1" value="1" />
+              <label for="rating1">😡</label>
+              <input type="radio" name="rating" id="rating2" value="2" />
+              <label for="rating2">😠</label>
+              <input type="radio" name="rating" id="rating3" value="3" />
+              <label for="rating3">😐</label>
+              <input type="radio" name="rating" id="rating4" value="4" />
+              <label for="rating4">😊</label>
+              <input type="radio" name="rating" id="rating5" value="5" />
+              <label for="rating5">😍</label>
+            </div>
+          </div>
+          <input type="button" id="submitBtn" value="Submit" />
+        </form>
+      </div>
+    </div>
+    <!-- <script type="module" src="../../public/config.js"></script> -->
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
