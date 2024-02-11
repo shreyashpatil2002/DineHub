@@ -7,8 +7,8 @@ import {
   getDoc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const restId = document.URL.split("=")[1].split("@")[0];
-console.log(restId);
+const restData = localStorage.getItem("DineCust");
+const restId = JSON.parse(restData).restId;
 const db = getFirestore(app);
 const restRef = doc(db, "restaurant", restId);
 
@@ -38,8 +38,8 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
               new Date().getFullYear(),
           })
             .then((docRef) => {
-              console.log("Document written with ID: ", docRef.id);
               alert("Feedback submitted successfully");
+              window.location.href = `${window.location.origin}/public/customer/`;
             })
             .catch((error) => {
               console.error("Error adding document: ", error);
