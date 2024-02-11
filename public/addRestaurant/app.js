@@ -12,8 +12,8 @@ import { app } from "../config.js";
 
 const auth = getAuth(app);
 onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    window.location.href = "../login";
+  if (!user && !user.emailVerified) {
+    window.location.href = `${window.location.origin}/public/login/`;
   }
   else if(user && user.emailVerified){
     let db = getFirestore(app);

@@ -11,7 +11,7 @@ import { app } from "../config.js";
 
 const auth = getAuth(app);
 onAuthStateChanged(auth, (user) => {
-    if (!user) {
+    if (!user || !user.emailVerified) {
         window.location.href = `${window.location.origin}/public/login/`;
     } else {
         const userId = user.uid;
