@@ -174,19 +174,7 @@ function createDatabaseUser() {
       console.log(error);
     });
 }
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    if (user.emailVerified) {
-      localStorage.setItem("user", JSON.stringify(auth.currentUser));
-      redirectToDashboard();
-    }
-  }
-  else {
-    document.querySelector(".preloader").style.display = "none";
-  }
-});
-
+document.querySelector(".preloader").style.display = "none";
 const redirectToDashboard = () => {
   setInterval(() => {
     window.location.href = `${window.location.origin}/public/addRestaurant/`;
