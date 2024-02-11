@@ -21,5 +21,23 @@
       <button id="GoToDashboard">Go to Dashboard</button>
     </div>
     <script type="module" src="app.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+      function DownloadQR(element) {
+        html2canvas(element, { 
+          allowTaint: true, 
+          useCORS: true,
+          backgroundColor: '#ffffff',
+          scale: 2
+        }).then(function (canvas) {
+          var link = document.createElement("a");
+          document.body.appendChild(link);
+          link.download = "QRCode.png";
+          link.href = canvas.toDataURL("image/png");
+          link.target = '_blank';
+          link.click();
+        });
+      }
+    </script>
   </body>
 </html>
