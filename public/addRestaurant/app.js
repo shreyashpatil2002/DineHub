@@ -74,6 +74,7 @@ function addRestaurant() {
     RestaurantName: inputFields[0].value,
     RestaurantLocation: inputFields[1].value,
     TableNo: inputFields[2].value,
+    RestCode: Math.floor(Math.random() * 1000000),
   }, { merge: true });
   docRef = doc(db, `restaurant/${auth.currentUser.uid}/foodItems/demo`);
   setDoc(docRef, {})
