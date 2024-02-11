@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap');
+
+* , *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.hero {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.form {
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form h1 {
+    margin-bottom: 2rem;
+}
+.form form {
+    width: 70%;
+}
+.form form input, #sendMail {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    padding: 8px 20px;
+    border: 1px solid #d1d1d1;
+}
+.form form div {
+    position: relative;
+}
+.form form div>img {
+    position: absolute;
+    top: 55%;
+    right: 20px;
+    transform: translateY(-45%);
+    display: none;
+}
+.form form #sendMail {
+    margin-top: 1rem;
+    background: #008080;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+.form #signinLink {
+    font-size: 14px;
+    font-weight: 600;
+}
+.form form>span>a {
+    margin-left: 4px;
+    text-decoration: none;
+    color: rgb(0, 89, 255);
+}
+#forgotPasswordLink {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    float: right;
+}
+.image {
+    flex-basis: 50%;
+    height: 100%;
+    background-image: url(../Assets/images/loginPageImage.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5rem 0px 0px 5rem;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a span {
+    margin-right: 8px;
+}
+.hide {
+    display: none;
+    color: red;
+}
