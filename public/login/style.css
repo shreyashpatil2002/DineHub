@@ -144,6 +144,12 @@
     text-decoration: none;
     color: rgb(0, 89, 255);
 }
+#forgotPasswordLink {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    float: right;
+}
 .image {
     flex-basis: 50%;
     height: 100%;
