@@ -11,7 +11,33 @@
     width: 100vw;
     padding: 20px;
 }
-
+.hero header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+.hero header>p {
+    position: relative;
+}
+.hero header p span {
+    font-size: 2rem;
+}
+.hero #bagShow {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    right: 0;
+    background: red;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px red;
+    display: none;
+}
 .itemList {
     display: flex;
     align-items: center;
