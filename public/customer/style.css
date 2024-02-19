@@ -35,6 +35,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
+    z-index: 10;
 }
 .form input {
     width: 80%;
@@ -45,12 +46,12 @@
 }
 .hero .bottom {
     width: 100vw;
-    height: 30vh;
+    height: 40vh;
     background: #fff;
-    position: absolute;
+    position: fixed;
     left: 0;
-    bottom: 0;
-    margin-top: 3rem;
+    top: 60vh;
+    z-index: 5;
 }
 .hero .bottom .content {
     width: 100%;
@@ -94,19 +95,6 @@
     font-weight: bold;
     margin-top: 3rem;
     border-radius: 15px;
-}
-.footer {
-    width: 100vw;
-    height: 5.1rem;
-    background: #30465e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-weight: 600;
-    margin-top: 2rem;
-    position: absolute;
-    bottom: 10;
 }
 .overlay {
     width: 100vw;
@@ -152,16 +140,16 @@
     font-size: 1.5rem;
     color: #fff;
 }
-
 .overlay .content>span {
     font-size: 3rem;
     color: #fff;
     margin-top: 2rem;
+    color: goldenrod;
 }
 .overlay .content h3 {
     font-size: 2rem;
     color: #fff;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .overlay .content p {
     text-align: center;
