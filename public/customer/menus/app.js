@@ -41,7 +41,7 @@ onSnapshot(collectionRef, (snapshot) => {
       const foodItemElement = document.createElement("div");
       foodItemElement.classList.add("foodItem");
       foodItemElement.id = change.doc.id;
-      const MAX_DESCRIPTION_LENGTH = 5;
+      const MAX_DESCRIPTION_LENGTH = 3;
 
       const truncatedDescription = foodItem.itemDesc
         .split(" ")
@@ -59,7 +59,7 @@ onSnapshot(collectionRef, (snapshot) => {
         <h3>${foodItem.itemName}</h3>
         <p>Description: ${description}</p>
         <p>Price: $${foodItem.itemPrice}</p>
-        <button onclick="addItem(this.parentElement)">Add to Cart</button>
+        <button>Add to Cart</button>
       `;
 
       itemList.appendChild(foodItemElement);
@@ -76,7 +76,7 @@ onSnapshot(collectionRef, (snapshot) => {
         document.getElementById(change.doc.id).style.display = "block";
       }
 
-      const MAX_DESCRIPTION_LENGTH = 5;
+      const MAX_DESCRIPTION_LENGTH = 3;
       const truncatedDescription = change.doc
         .data()
         .itemDesc.split(" ")
@@ -94,7 +94,7 @@ onSnapshot(collectionRef, (snapshot) => {
         <h3>${change.doc.data().itemName}</h3>
         <p>Description: ${description}</p>
         <p>Price: $${change.doc.data().itemPrice}</p>
-        <button onclick="addItem(this.parentElement)>Add to Cart</button>
+        <button>Add to Cart</button>
       `;
     }
     if (change.type === "removed") {
