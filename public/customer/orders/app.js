@@ -1,17 +1,3 @@
-import { app } from "../../config.js";
-import {
-  getFirestore,
-  collection,
-  getDoc,
-  doc,
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-const DineCust = localStorage.getItem("DineCust");
-const restId = JSON.parse(DineCust).restId;
-
-// gettings all the foodItems from the database
-const db = getFirestore(app);
-
 document.addEventListener("DOMContentLoaded", () => {
   const orders = document.getElementById("orders");
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -27,13 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const showItem = (foodItem) => {
   const orders = document.getElementById("orders");
-  const link = document.createElement("a");
-  link.href = `../foodItem/?itemId=${foodItem.id}`;
   const item = document.createElement("div");
   item.classList.add("itemBox");
   item.id = foodItem.id;
   item.innerHTML = `
     <div class="item">
+    <a href="../foodItem/?id=${foodItem.id}">
     <div class="item__img">
       <img src="${foodItem.img}" alt="${foodItem.name}" />
     </div>
@@ -42,12 +27,16 @@ const showItem = (foodItem) => {
       <p>${foodItem.description}</p>
       <p>₹${foodItem.price}</p>
     </div>
+    </a>
   </div>
   <div class="item_footer">
-    <p>Quantity: ${foodItem.quantity}</p>
+  <div class="quantity" id="${foodItem.id}">
+  <button id="decrement" onclick="decrement(this)">-</button>
+  <input type="text" id="quantity" value="1" disabled />
+  <button id="increment" onclick="increment(this)">+</button>
+  </div>
     <button class="removeBtn" onclick="removeItem(this)">Remove</button>
   </div>
   `;
-  link.appendChild(item);
-  orders.appendChild(link);
-}
+  orders.appendChild(item);
+};
