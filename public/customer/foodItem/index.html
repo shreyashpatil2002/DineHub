@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="shortcut icon" href="images/github.png" type="image/x-icon" />
     <title>Food Item</title>
   </head>
@@ -12,61 +15,29 @@
   <body>
     <div class="hero">
       <header>
-        <h1>Coffie</h1>
+        <a href="../menus/">
+          <span class="material-symbols-outlined"> arrow_back </span>
+        </a>
+        <h1>Details</h1>
         <p>
           <a href="../orders">
-            <span class="material-symbols-outlined">
-              local_mall
-            </span>
+            <span class="material-symbols-outlined"> local_mall </span>
           </a>
-          <span id="itemCount">1</span>
+          <span id="itemCount"></span>
         </p>
       </header>
-        
+
       <div id="foodItem">
-        <div id="item">
-          <div class="item_img">
-            <img src="https://firebasestorage.googleapis.com/v0/b/resto-53821.appspot.com/o/dvqOVT5D9kfH93uTHXNlYnXeC2V2%2FHot%20Drinks%2Fcoffie?alt=media&token=84974b21-51ee-4db0-922e-138b14fc3e0d" alt="Coffee" />
-          </div>
-          <div class="item_info">
-            <div class="item_info_head">
-              <h2>Coffee</h2>
-              <span>Price: 50</span>
-            </div>
-            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit itaque aut ratione id molestiae maiores at dolore aliquid optio molestias.</p>
-          </div>
-          <div class="quantity">
-            <span>Quantity</span> 
-            <button id="decrement" onclick="decrement()">-</button>
-            <input type="text" id="quantity" value="1" disabled/>
-            <button id="increment" onclick="increment()">+</button>
-          </div>
-          <div class="rating">
-            <span>Reviews</span><br>
-            <span class="material-symbols-outlined">
-              star
-            </span>
-            <span class="material-symbols-outlined">
-              star
-            </span>
-            <span class="material-symbols-outlined">
-              star
-            </span>
-            <span class="material-symbols-outlined">
-              star
-            </span>
-            <span class="material-symbols-outlined">
-              star
-            </span>
-          </div>
-        </div>
+        <h1>No Item selected</h1>
       </div>
-      <div class="btn">
-        <button>Add to cart <span class="material-symbols-outlined">
-          add_circle
-          </span></button>
+      <div class="btn" onclick="addItem()">
+        <button>
+          <span class="material-symbols-outlined"> shopping_bag </span>Add to
+          cart
+        </button>
       </div>
     </div>
+    <script type="module" src="app.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
