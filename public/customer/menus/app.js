@@ -3,8 +3,6 @@ import {
   getFirestore,
   collection,
   onSnapshot,
-  query,
-  where,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const DineCust = localStorage.getItem("DineCust");
@@ -41,7 +39,7 @@ onSnapshot(collectionRef, (snapshot) => {
       const foodItemElement = document.createElement("div");
       foodItemElement.classList.add("foodItem");
       foodItemElement.id = change.doc.id;
-      const MAX_DESCRIPTION_LENGTH = 3;
+      const MAX_DESCRIPTION_LENGTH = 7;
 
       const truncatedDescription = foodItem.itemDesc
         .split(" ")
@@ -58,8 +56,8 @@ onSnapshot(collectionRef, (snapshot) => {
         <img src="${foodItem.itemImg}" alt="${foodItem.itemName}" />
         <h3>${foodItem.itemName}</h3>
         <p>Description: ${description}</p>
-        <p>Price: $${foodItem.itemPrice}</p>
-        <button>Add to Cart</button>
+        <p>Price: ₹${foodItem.itemPrice}</p>
+        <button onclick="addItem(this)" >Add to Cart</button>
       `;
 
       itemList.appendChild(foodItemElement);
@@ -76,7 +74,7 @@ onSnapshot(collectionRef, (snapshot) => {
         document.getElementById(change.doc.id).style.display = "block";
       }
 
-      const MAX_DESCRIPTION_LENGTH = 3;
+      const MAX_DESCRIPTION_LENGTH = 7;
       const truncatedDescription = change.doc
         .data()
         .itemDesc.split(" ")
@@ -92,9 +90,9 @@ onSnapshot(collectionRef, (snapshot) => {
       document.getElementById(change.doc.id).innerHTML = `
         <img src="${change.doc.data().itemImg}" alt="${change.doc.data().itemName}" />
         <h3>${change.doc.data().itemName}</h3>
-        <p>Description: ${description}</p>
-        <p>Price: $${change.doc.data().itemPrice}</p>
-        <button>Add to Cart</button>
+        <p class="desc">Description: ${description}</p>
+        <p class="price">Price: ₹${change.doc.data().itemPrice}</p>
+        <button onclick="addItem(this)" >Add to Cart</button>
       `;
     }
     if (change.type === "removed") {
