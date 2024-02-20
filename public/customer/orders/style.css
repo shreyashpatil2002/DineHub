@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap');
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+    width: 100vw;
+    padding: 20px;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.hero header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+.hero #orders {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5rem;
+}
+.hero .itemBox {
+    width: 100%;
+    height: auto;
+    padding: .5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #bebebe;
+}
+.hero .item {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hero #orders .item .item__img {
+    width: 30%;
+    height: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.hero #orders .item .item__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero #orders .item .item__info {
+    width: 70%;
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.hero #orders .itemBox .item_footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .5rem;
+    border-top: 1px solid #eee;
+    padding: .5rem 0;
+}
+.hero #orders .itemBox .item_footer p {
+    font-size: .9rem;
+    font-weight: 600;
+}
+.hero #orders .itemBox .item_footer button {
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: .8rem;
+    font-weight: 600;
+    border-radius: 5px;
+    background: rgb(225, 65, 65);
+    color: #fff;
+    cursor: pointer;
+}
+#order {
+    width: 90%;
+    height: 8vh;
+    position: fixed;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px #bebebe;
+    background: royalblue;
+    color: #fff;
+}
