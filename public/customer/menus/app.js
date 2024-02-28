@@ -53,10 +53,12 @@ onSnapshot(collectionRef, (snapshot) => {
           : truncatedDescription;
 
       foodItemElement.innerHTML = `
+        <a href="../foodItem/?itemId=${change.doc.id}">
         <img src="${foodItem.itemImg}" alt="${foodItem.itemName}" />
         <h3>${foodItem.itemName}</h3>
         <p>Description: ${description}</p>
         <p>Price: ₹${foodItem.itemPrice}</p>
+        </a>
         <button onclick="addItem(this)" >Add to Cart</button>
       `;
 
@@ -88,7 +90,9 @@ onSnapshot(collectionRef, (snapshot) => {
           : truncatedDescription;
 
       document.getElementById(change.doc.id).innerHTML = `
-        <img src="${change.doc.data().itemImg}" alt="${change.doc.data().itemName}" />
+        <img src="${change.doc.data().itemImg}" alt="${
+        change.doc.data().itemName
+      }" />
         <h3>${change.doc.data().itemName}</h3>
         <p class="desc">Description: ${description}</p>
         <p class="price">Price: ₹${change.doc.data().itemPrice}</p>
@@ -99,4 +103,17 @@ onSnapshot(collectionRef, (snapshot) => {
       document.getElementById(change.doc.id).remove();
     }
   });
+  showActive();
 });
+
+const showActive = () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.forEach((item) => {
+    const foodItem = document.getElementById(item.id);
+    foodItem.querySelector("button").innerText = "Added to Cart";
+    foodItem.querySelector("button").style.backgroundColor = "green";
+    foodItem.querySelector("button").disabled = true;
+  });
+  document.getElementById("itemCount").innerText = cart.length;
+  document.getElementById("itemCount").style.display = "flex";
+};
