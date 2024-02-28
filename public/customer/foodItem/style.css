@@ -70,7 +70,7 @@ header>a span:first-child {
   width: 100%;
   height: auto;
 }
-#foodItem #item {
+#foodItem .item {
   width: 100%;
   height: auto;
   display: flex;

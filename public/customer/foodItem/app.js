@@ -17,7 +17,7 @@ const foodItemRef = doc(db, "restaurant", restId, "foodItem", itemId);
 getDoc(foodItemRef)
   .then((doc) => {
     if (doc.exists()) {
-      showItem(doc.data());
+      showItem(doc.data(), doc.id);
     } else {
       console.log("No such document!");
     }
@@ -26,10 +26,10 @@ getDoc(foodItemRef)
     console.log("Error getting document:", error);
   });
 
-const showItem = (data) => {
+const showItem = (data, id) => {
   const item = document.getElementById("foodItem");
   item.innerHTML = `
-  <div id="item">
+  <div class="item" id="${id}">
   <div class="item_img">
     <img
       src="${data.itemImg}"
@@ -67,4 +67,35 @@ const showItem = (data) => {
     </p>
   </div>
 </div>`;
+ showQuantity();
+ showActive();
 };
+
+const showQuantity = () => {
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    if(cart === null) {
+      return;
+    }
+    for(let item of cart) {
+      if(item.id === window.location.search.split("=")[1]) {
+        document.getElementById("quantity").value = item.quantity;
+        break;
+      }
+    }
+};
+
+const showActive = () => {
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    if(cart === null) {
+      return;
+    }
+    for(let item of cart) {
+      if(item.id === window.location.search.split("=")[1]) {
+        const button = document.querySelector('.btn');
+        button.firstElementChild.innerText = "Added to cart";
+        button.firstElementChild.style.backgroundColor = "green";
+        button.firstElementChild.disabled = true;
+        break;
+      }
+    }
+}
