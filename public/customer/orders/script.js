@@ -27,12 +27,4 @@ const decrement = (button) => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    const cart = JSON.parse(localStorage.getItem("cart"));
-    cart.forEach((item) => {
-      let orderItem = document.getElementById(item.id);
-      orderItem.querySelector("#quantity").value = item.quantity;
-    });
-  }, 100);
-});
+

@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const itemId = item.id;
       showItem(item);
     });
+  showQuantity();
   }
 });
 
@@ -18,7 +19,7 @@ const showItem = (foodItem) => {
   item.id = foodItem.id;
   item.innerHTML = `
     <div class="item">
-    <a href="../foodItem/?id=${foodItem.id}">
+    <a href="../foodItem/?itemId=${foodItem.id}">
     <div class="item__img">
       <img src="${foodItem.img}" alt="${foodItem.name}" />
     </div>
@@ -39,4 +40,12 @@ const showItem = (foodItem) => {
   </div>
   `;
   orders.appendChild(item);
+};
+
+const showQuantity = () => {
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    cart.forEach((item) => {
+      let orderItem = document.getElementById(item.id);
+      orderItem.querySelector("#quantity").value = item.quantity;
+    });
 };
