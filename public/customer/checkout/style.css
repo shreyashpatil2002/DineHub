@@ -45,7 +45,7 @@ header > a span:first-child {
 
 .btn button {
   width: 90%;
-  height: auto;
+  height: 8vh;
   position: fixed;
   bottom: 3%;
   left: 50%;
@@ -111,7 +111,9 @@ tbody td {
   padding: 10px;
   border-bottom: 1px solid #ccc;
 }
-
+tbody td:last-child {
+  width: 90px;
+}
 tbody td:first-child {
   font-weight: bold;
 }
