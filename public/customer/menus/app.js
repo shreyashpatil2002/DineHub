@@ -54,10 +54,12 @@ onSnapshot(collectionRef, (snapshot) => {
 
       foodItemElement.innerHTML = `
         <a href="../foodItem/?itemId=${change.doc.id}">
+        <div>
         <img src="${foodItem.itemImg}" alt="${foodItem.itemName}" />
         <h3>${foodItem.itemName}</h3>
         <p>Description: ${description}</p>
         <p>Price: ₹${foodItem.itemPrice}</p>
+        </div>
         </a>
         <button onclick="addItem(this)" >Add to Cart</button>
       `;
@@ -90,12 +92,16 @@ onSnapshot(collectionRef, (snapshot) => {
           : truncatedDescription;
 
       document.getElementById(change.doc.id).innerHTML = `
+      <a href="../foodItem/?itemId=${change.doc.id}">
+        <div>
         <img src="${change.doc.data().itemImg}" alt="${
         change.doc.data().itemName
       }" />
         <h3>${change.doc.data().itemName}</h3>
-        <p class="desc">Description: ${description}</p>
-        <p class="price">Price: ₹${change.doc.data().itemPrice}</p>
+        <p>Description: ${description}</p>
+        <p>Price: ₹${change.doc.data().itemPrice}</p>
+        </div>
+        </a>
         <button onclick="addItem(this)" >Add to Cart</button>
       `;
     }
