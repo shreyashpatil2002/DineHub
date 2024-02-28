@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>checkout</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <header>
+        <a href="../orders/">
+          <span class="material-symbols-outlined"> arrow_back </span>
+        </a>
+        <h1>Checkout</h1>
+      </header>
+      <div id="billing">
+        <h2>Total Price</h2>
+        <!-- promo code -->
+        <div class="promo">
+          <input type="text" placeholder="Promo code" />
+          <button>
+            <span class="material-symbols-outlined"> check </span>
+          </button>
+        </div>
+        <div id="items">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="itemList">
+                    <tr>
+                        <td>Item 1</td>
+                        <td>$10.00</td>
+                        <td>2</td>
+                        <td>$20.00</td>
+                    </tr>
+                    <tr>
+                        <td>Item 2</td>
+                        <td>$20.00</td>
+                        <td>1</td>
+                        <td>$20.00</td>
+                    </tr>
+                    <tr>
+                        <td>Item 3</td>
+                        <td>$30.00</td>
+                        <td>1</td>
+                        <td>$30.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Grand Total</td>
+                        <td>$60.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+      </div>
+      <div class="btn">
+        <button>
+          Checkout
+          <span class="material-symbols-outlined">
+            shopping_cart_checkout
+          </span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
