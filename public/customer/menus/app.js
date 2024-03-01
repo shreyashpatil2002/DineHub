@@ -58,7 +58,7 @@ onSnapshot(collectionRef, (snapshot) => {
         <img src="${foodItem.itemImg}" alt="${foodItem.itemName}" />
         <h3>${foodItem.itemName}</h3>
         <p>Description: ${description}</p>
-        <p>Price: ₹${foodItem.itemPrice}</p>
+        <p>Price: ₹<b>${foodItem.itemPrice}</b></p>
         </div>
         </a>
         <button onclick="addItem(this)" >Add to Cart</button>
@@ -99,7 +99,7 @@ onSnapshot(collectionRef, (snapshot) => {
       }" />
         <h3>${change.doc.data().itemName}</h3>
         <p>Description: ${description}</p>
-        <p>Price: ₹${change.doc.data().itemPrice}</p>
+        <p>Price: ₹<b>${change.doc.data().itemPrice}</b></p>
         </div>
         </a>
         <button onclick="addItem(this)" >Add to Cart</button>
