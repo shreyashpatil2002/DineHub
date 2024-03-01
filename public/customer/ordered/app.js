@@ -1,7 +1,7 @@
 // creating a timer that will count down the time left for the customer to cancel the order
 let showTime = document.getElementById("showTime");
 // the timer will be of 5 minutes
-let time = 0.1 * 60;
+let time = 5 * 60;
 let minutes;
 let seconds;
 let timer = setInterval(function () {
