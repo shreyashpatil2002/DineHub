@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap");
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero {
+  width: 100vw;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+header > a span:first-child {
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid #cfcfcf;
+}
+
+.hero header > p {
+  position: relative;
+}
+
+.hero header p span {
+  font-size: 2rem;
+}
+
+button {
+  width: 90%;
+  height: 8vh;
+  position: fixed;
+  left: 50%;
+  bottom: 3%;
+  transform: translateX(-50%);
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: royalblue;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+button span {
+  margin-right: 10px;
+}
+.cancelBtn button {
+  background-color: #ff4d4d;
+  bottom: 30%;
+}
+.feedbackBtn button {
+    background-color: #4d79ff;
+    bottom: 15%;
+}
+.homeBtn button {
+    background-color: #ff8800;
+    bottom: 5%;
+}
+#showTime {
+  height: 40vh;
+  text-align: center; 
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+#showTime h2 {
+  font-size: 4.5rem;
+  margin-bottom: 10px;
+}
+
