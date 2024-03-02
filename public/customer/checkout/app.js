@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   if (cart.length === 0) {
     itemList.innerHTML = "<h1>No Items yet</h1>";
+    document.getElementById("checkoutLink").removeAttribute("href");
   } else {
     cart.forEach((item) => {
       const itemName = item.name;
