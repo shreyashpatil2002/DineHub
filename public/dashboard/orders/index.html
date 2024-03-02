@@ -12,7 +12,9 @@
   </head>
   <body>
     <div class="hero">
-      <div class="preloader"><img src="../../Assets/Spinning line.gif" alt="spinning line"></div>
+      <div class="preloader">
+        <img src="../../Assets/Spinning line.gif" alt="spinning line" />
+      </div>
       <div class="rightSide" id="menus">
         <header>
           <h1>DineHub</h1>
@@ -85,72 +87,23 @@
               <thead>
                 <tr>
                   <th></th>
-                  <th>Order Id</th>
-                  <th>Table No</th>
-                  <th>Order Items</th>
-                  <th>Quantity</th>
+                  <th>Table NO</th>
+                  <th>Items Ordered</th>
                   <th>Order Date</th>
                   <th>Order Status</th>
                   <th>Order Total</th>
-                  <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td><p>&plus;</p></td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>burder, samosa</td>
-                  <th></th>
-                  <td>12/12/2020</td>
-                  <td class="status delivered"><p>Delivered</p></td>
-                  <td>Rs. 500</td>
-                  <td>
-                    <img
-                      src="../../Assets/svg/ellipsis-vertical-solid.svg"
-                      alt=""
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td><p>&plus;</p></td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td></td>
-                  <th></th>
-                  <td>12/12/2020</td>
-                  <td class="status pending"><p>Pending</p></td>
-                  <td>Rs. 500</td>
-                  <td>
-                    <img
-                      src="../../Assets/svg/ellipsis-vertical-solid.svg"
-                      alt=""
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td><p>&plus;</p></td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td></td>
-                  <th></th>
-                  <td>12/12/2020</td>
-                  <td class="status canceld"><p>Canceld</p></td>
-                  <td>Rs. 500</td>
-                  <td>
-                    <img
-                      src="../../Assets/svg/ellipsis-vertical-solid.svg"
-                      alt=""
-                    />
-                  </td>
-                </tr>
-              </tbody>
+              <tbody id="orderList"></tbody>
             </table>
           </div>
-          <div class="income">
+          <div id="singleOrder">
+            
+          </div>
+          <!-- <div class="income">
             <h2>Total Orders</h2>
             <div id="incomeChart"></div>
-          </div>
+          </div> -->
         </main>
       </div>
     </div>

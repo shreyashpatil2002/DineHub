@@ -257,7 +257,7 @@ a {
   height: 50px;
   padding: 0 1rem;
 }
-.hero .leftSide main .ordersTable table thead tr th {
+.hero .leftSide main .ordersTable table thead tr th, .subHeading th{
   text-align: left;
   padding: 0.5rem;
   font-size: 1rem;
@@ -304,15 +304,15 @@ a {
   width: auto;
   padding: 0.2rem 0.5rem;
 }
-.hero .leftSide main .ordersTable table tbody tr .delivered p{
+.hero .leftSide main .ordersTable table tbody tr .Delivered p{
   color: green;
   background: rgba(0, 128, 0, 0.37);
 }
-.hero .leftSide main .ordersTable table tbody tr .pending p{
+.hero .leftSide main .ordersTable table tbody tr .Pending p{
   color: #ffab00;
   background: rgba(255, 171, 0, 0.37);
 }
-.hero .leftSide main .ordersTable table tbody tr .canceld p{
+.hero .leftSide main .ordersTable table tbody tr .Cancelled p{
   color: red;
   background: rgba(255, 0, 0, 0.37);
 }
@@ -335,4 +335,170 @@ a {
   left: 0;
   background: #fff;
   z-index: 9999;
+}
+#singleOrder {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#singleOrder .orderDetails {
+  width: 50%;
+  height: 80%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+}
+#singleOrder .orderDetails::-webkit-scrollbar {
+  width: 5px;
+}
+#singleOrder .orderDetails::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+#singleOrder .orderDetails::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.deleteBtn {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background: #ff0000;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+.deleteBtn span {
+  margin-right: 0.5rem;
+}
+#singleOrder .orderDetails .orderDetailsHeader {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+#singleOrder .orderDetails .orderDetailsHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #636363;
+}
+#singleOrder .orderDetails .orderDetailsHeader button {
+ background: none;
+ outline: none;
+ border: none;
+ cursor: pointer;
+}
+#singleOrder .orderDetails .orderDetailsBody {
+  width: 100%;
+}
+#singleOrder .orderDetails .orderDetailsBody h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #636363;
+  margin-bottom: 1rem;
+}
+#singleOrder .orderDetails .orderDetailsBody p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #636363;
+  margin-bottom: 1rem;
+}
+#singleOrder .orderDetails .orderDetailsBody label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #636363;
+  margin-bottom: 1rem;
+}
+#singleOrder .orderDetails .orderDetailsBody select {
+  width: 20%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #636363;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+#singleOrder .orderDetails .orderDetailsBody table {
+  width: 100%;
+  height: 50%;
+  color: #636363;
+  border-collapse: collapse;
+  overflow-y: scroll;
+}
+#singleOrder .orderDetails .orderDetailsBody table thead {
+  width: 100%;
+  height: 10%;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+#singleOrder .orderDetails .orderDetailsBody table tr {
+  width: 100%;
+  height: 50px;
+  padding: 0 1rem;
+}
+#singleOrder .orderDetails .orderDetailsBody table thead tr th {
+  text-align: left;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #636363;
+  text-transform: uppercase;
+}
+#singleOrder .orderDetails .orderDetailsBody table tbody {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+#singleOrder .orderDetails .orderDetailsBody table tbody tr {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+#singleOrder .orderDetails .orderDetailsBody table tbody tr td {
+  text-align: left;
+  padding: 0.5rem;
+  font-size: .9rem;
+  font-weight: 500;
+  color: #636363;
+}
+#singleOrder {
+  display: none;
+}
+.rowKey {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background: #ffab00;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
