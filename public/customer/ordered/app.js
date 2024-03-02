@@ -64,9 +64,8 @@ const placeOrder = () => {
   addDoc(orderCollection, {
     tableNo: tableNo,
     items: cartItems,
-    status: "pending",
+    status: "Pending",
     time: new Date(),
   });
   localStorage.removeItem("cart");
-  localStorage.removeItem("timeUp");
 }
