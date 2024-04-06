@@ -213,6 +213,7 @@ a {
 }
 
 .feedback {
+  margin: 1rem 0;
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 10px;

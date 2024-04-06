@@ -32,7 +32,7 @@ onAuthStateChanged(auth, (user) => {
                         qrCode.classList.add("qr-code");
                         qrCode.innerHTML = `
                             <h3>${restaurantName}</h3>
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://shreyashpatil2002.github.io/DineHub/customer/?RestId=${userId}@table=0${i}" alt="QR Code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://shreyashpatil2002.github.io/DineHub/public/customer/?RestId=${userId}@table=0${i}" alt="QR Code">
                             <p>Table ${i}</p>
                         `;
                         const qrButton = document.createElement("button");

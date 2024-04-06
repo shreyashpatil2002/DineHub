@@ -22,6 +22,7 @@ let grandTotal = 0;
 const insertRow = (itemName, itemQuantity, itemPrice) => {
   const row = document.createElement("tr");
   grandTotal += itemPrice * itemQuantity;
+  localStorage.setItem("grandTotal", grandTotal);
   row.innerHTML = `
         <td>${itemName}</td>
         <td>₹ ${itemPrice}</td>
@@ -30,3 +31,6 @@ const insertRow = (itemName, itemQuantity, itemPrice) => {
     `;
   itemList.appendChild(row);
 };
+
+
+
