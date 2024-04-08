@@ -145,7 +145,7 @@ a {
   border-radius: 10px;
   z-index: 1;
 }
-.hero .leftSide header .rightOpt #dropdown>span {
+.hero .leftSide header .rightOpt #dropdown > span {
   float: right;
   cursor: pointer;
 }
@@ -215,4 +215,119 @@ a {
   left: 0;
   background: #fff;
   z-index: 9999;
+}
+.userProfile,
+.restaurantProfile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+}
+.restaurantProfile {
+  justify-content: space-between;
+}
+.restaurantProfile > .right-side,
+.restaurantProfile > .leftSide {
+  flex-basis: 50%;
+  width: 100%;
+}
+.restaurantProfile > .left-side {
+}
+.restaurantProfile > .right-side h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.restaurantProfile > .right-side button {
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.restaurantProfile > .right-side img {
+  width: 70%;
+  height: 70%;
+  border-radius: 10px;
+  display: flex;
+  margin: auto;
+}
+.dialogBox {
+  width: 50%;
+  height: 65%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  box-shadow: 0px 2px 5px #eee;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.dialogBox p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.dialogBox form {
+  width: 100%;
+}
+.dialogBox form input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #eee;
+  outline: none;
+  padding: 0 1rem;
+  font-weight: 500;
+  color: #636363;
+  margin-bottom: 1rem;
+}
+.dialogBox form button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editProfile {
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editProfile span {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+.userProfile img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.userProfile p {
+  font-size: 1rem;
+  font-weight: 500;
 }

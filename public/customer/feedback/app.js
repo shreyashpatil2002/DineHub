@@ -39,7 +39,7 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
           })
             .then((docRef) => {
               alert("Feedback submitted successfully");
-              window.location.href = `../foodItem/`;
+              window.location.href = `../menus/`;
             })
             .catch((error) => {
               console.error("Error adding document: ", error);
