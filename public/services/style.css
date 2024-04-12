@@ -68,6 +68,99 @@ a {
 }
 
 
+#hero #pageOne .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
+}
+#hero #pageOne .container .content {
+  width: 50%;
+  padding-right: 2rem;
+}
+#hero #pageOne .container .content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+#hero #pageOne .container .content p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #575757;
+}
+#hero #pageOne .container .img {
+  width: 50%;
+}
+#hero #pageOne .container .img img {
+  width: 100%;
+}
+#hero #pageTwo {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#hero #pageTwo .horizontal_bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#hero #pageTwo .horizontal_bar .card {
+  width: 20%;
+  padding: 1rem;
+  background: #008080;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+#hero #pageTwo .horizontal_bar .card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#hero #pageTwo .horizontal_bar .card p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+#hero #pageTwo .horizontal_bar .card img {
+  width: 50px;
+}
+
+
+
+#hero #pageThree .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
+}
+#hero #pageThree .container .content {
+  width: 50%;
+  padding-right: 2rem;
+}
+#hero #pageThree .container .content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+#hero #pageThree .container .content p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #575757;
+}
+#hero #pageThree .container .img {
+  width: 50%;
+}
+#hero #pageThree .container .img img {
+  width: 100%;
+}
+
 #hero footer {
   padding: 2rem;
   background: #008080;

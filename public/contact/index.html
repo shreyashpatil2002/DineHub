@@ -19,7 +19,6 @@
             <li><a href="../">Home</a></li>
             <li><a href="../services/">Services</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="../Help/">Help</a></li>
           </ul>
         </nav>
         <div id="accountBtn">
@@ -28,37 +27,21 @@
         </div>
       </header>
       <div class="container">
-        <div class="content">
-          <div class="leftSection">
-            <h1>Contact Us</h1>
-            <p>
-              We are here to help you. If you have any queries or need any help, feel free to contact us.
-            </p>
-          </div>
-          <div class="rightSection">
-            <form action="#" method="">
-              <div class="inputBox">
-                <input type="text" name="name" required placeholder="Enter Your Name"/>
-                
-              </div>
-              <div class="inputBox">
-                <input type="email" name="email" required placeholder="Enter your Email"/>
-                
-              </div>
-              <div class="inputBox">
-                <input type="text" name="subject" required placeholder="How can we help you?"/>
-                
-              </div>
-              <div class="inputBox">
-                <textarea name="message" required placeholder="Enter your text"></textarea>
-                
-              </div>
-              <div class="inputBox">
-                <input type="submit" value="Send" />
-              </div>
-            </form>
-          </div>
+        <div class="form">
+          <form action="#">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" />
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" />
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="6" cols="10" placeholder="Enter your message"></textarea>
+            <button id="sendMsg">Send</button>
+          </form>
         </div>
+        <div class="img">
+          <img src="../Assets/images/Contact-Us.webp" alt="" />
+          </div>  
+      </div>
     </section>
     <footer>
       <div class="container">
@@ -69,19 +52,19 @@
               Welcome to Dinehub, a platform that helps you to manage your restaurant business.
             </p>
             <div class="social">
-              <a href="#"><img src="Assets/svg/linkedin-in.svg" alt="" /></a>
+              <a href="#"><img src="../Assets/svg/linkedin-in.svg" alt="" /></a>
               <a href="#">
-                <img src="Assets/svg/instagram.svg" alt="" />
+                <img src="../Assets/svg/instagram.svg" alt="" />
               </a>
             </div>
             <span>&copy; DineHub 2024</span>
             </div>
-            <div class="socialLinks">
+            <!-- <div class="socialLinks">
               <a href="#"
-                ><img src="Assets/images/linkedin.png" alt=""
+                ><img src="../Assets/images/linkedin.png" alt=""
               /></a>
-              <a href="#"><img src="Assets/images/github.png" alt="" /></a> 
-            </div>
+              <a href="#"><img src="../Assets/images/github.png" alt="" /></a> 
+            </div> -->
             <div class="linkSection">
               <div class="links">
                 <h3>Company</h3>
@@ -115,6 +98,7 @@
       </div>
     </footer>
   </div>
+  <script type="module" src="app.js"></script>
 </body>
 
 </html>
