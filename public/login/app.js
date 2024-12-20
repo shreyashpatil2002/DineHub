@@ -142,6 +142,6 @@ onAuthStateChanged(auth, (user) => {
 
 const redirectToDashboard = () => {
   setInterval(() => {
-    window.location.href = `${window.location.origin}/public/addRestaurant/`;
+    window.location.href = `${window.location.origin}/DineHub/public/addRestaurant/`;
   }, Math.floor(Math.random() * (1000 - 500) + 1000));
 };
