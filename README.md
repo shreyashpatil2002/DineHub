@@ -84,7 +84,7 @@ DineHub/
 ## 🎨 Screenshots
 
 ### Home Page
-![Home Page](https://via.placeholder.com/800x400)
+![Home Page](https://shreyashpatil2002.github.io/DineHub/public/)
 
 ### Menu List
 ![Menu List](https://via.placeholder.com/800x400)
