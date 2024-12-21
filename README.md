@@ -87,7 +87,7 @@ DineHub/
 ![Home Page](https://shreyashpatil2002.github.io/DineHub/public/)
 
 ### Menu List
-![Menu List](https://via.placeholder.com/800x400)
+![Menu List](https://shreyashpatil2002.github.io/DineHub/public/dashboard/)
 
 ### Billing and Payment
 ![Billing and Payment](https://via.placeholder.com/800x400)
