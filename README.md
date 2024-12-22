@@ -84,10 +84,10 @@ DineHub/
 ## 🎨 Screenshots
 
 ### Home Page
-![Home Page](https://shreyashpatil2002.github.io/DineHub/public/800x400)
+![Home Page]()
 
-### Menu List
-![Menu List](https://shreyashpatil2002.github.io/DineHub/public/dashboard/800x400)
+### Users Menu List
+![Menu List](images/user%20dashboard.png "Menu List")
 
 <h3>Billing and Payment</h3>
 <img src="images/Bill%20generation.jpg" alt="Bill Generations" title="Bill Generations" style="width:450px; height:1000;">
