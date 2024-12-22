@@ -89,8 +89,8 @@ DineHub/
 ### Menu List
 ![Menu List](https://shreyashpatil2002.github.io/DineHub/public/dashboard/800x400)
 
-### Billing and Payment
-![Billing and Payment](https://via.placeholder.com/800x400)
+<h3>Billing and Payment</h3>
+<img src="images/Bill%20generation.jpg" alt="Bill Generations" title="Bill Generations" style="width:450px; height:1000;">
 
 ---
 
