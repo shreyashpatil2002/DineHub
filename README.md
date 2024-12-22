@@ -84,7 +84,7 @@ DineHub/
 ## 🎨 Screenshots
 
 ### Home Page
-![Home Page](images/homepage.png "Home Page")
+![Home Page](images/HomePage.png "Home Page")
 
 ### Users Menu List
 ![Menu List](images/user%20dashboard.png "Menu List")
