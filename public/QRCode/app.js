@@ -53,5 +53,5 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 document.getElementById("GoToDashboard").addEventListener("click", () => {
-    window.location.href = `${window.location.origin}/public/dashboard/`;
+    window.location.href = `${window.location.origin}/DineHub/public/dashboard/`;
 });
