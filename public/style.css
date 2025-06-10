@@ -338,15 +338,16 @@ a {
   color: #575757;
 }
 #hero #pageFour .container .testimonials {
-  width: 100%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
   margin-top: 2rem;
   overflow: hidden;
 }
 #hero #pageFour .container .testimonials .testimonial {
-  width: 30%;
+  width: 40%;
   height: 100%;
   padding: 1.5rem;
   border-radius: 20px 0 20px 0;
